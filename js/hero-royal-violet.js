@@ -20,12 +20,11 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ==========================================================================
-     1. Frame & Scaling: 1672×941 Design Stage scaled by min(vw/1672, vh/941)
+     1. Frame & Scaling: 1672×720 Design Stage scaled by min(vw/1672, vh/720)
      ========================================================================== */
   function initStageScaling() {
     const stage = document.getElementById('stage');
     const heroWrapper = document.getElementById('hero-stage-wrapper');
-    const dashboard = document.getElementById('dashboard-panel');
     if (!stage || !heroWrapper) return;
 
     let lastW = 0, lastH = 0;
@@ -47,15 +46,14 @@
         stage.style.width = '100%';
         stage.style.height = 'auto';
         heroWrapper.style.height = 'auto';
-        if (dashboard) dashboard.style.minHeight = '';
         return;
       }
 
-      // Frame dimensions
+      // Frame dimensions (720px matches the glowing planet rim video height)
       const dw = 1672;
-      const dh = 941;
+      const dh = 720;
 
-      // Scaling factor s = min(vw/1672, vh/941)
+      // Scaling factor s = min(vw/1672, vh/720)
       const s = Math.min(vw / dw, vh / dh);
 
       // Center horizontally and scale
@@ -66,9 +64,8 @@
       stage.style.transform = `translateX(-50%) scale(${s})`;
       stage.style.transformOrigin = 'top center';
 
-      // Total design height includes full dashboard panel (~1140 design px)
-      const totalDesignHeight = 1140;
-      const renderedHeight = Math.max(vh, Math.round(totalDesignHeight * s));
+      const totalDesignHeight = 720;
+      const renderedHeight = Math.max(Math.round(totalDesignHeight * s), Math.min(vh, 720));
       heroWrapper.style.height = `${renderedHeight}px`;
       stage.style.height = `${totalDesignHeight}px`;
     }
@@ -283,107 +280,11 @@
   }
 
   /* ==========================================================================
-     5. Violet Area Chart: "Daily dynamics of sales" (HTML5 Canvas 2D)
-     ========================================================================== */
-  function initHeroChart() {
-    const chartCanvas = document.getElementById('sales-chart-canvas');
-    if (!chartCanvas) return;
-
-    function drawChart() {
-      const ctx = chartCanvas.getContext('2d');
-      const rect = chartCanvas.getBoundingClientRect();
-      const dw = rect.width || 340;
-      const dh = rect.height || 140;
-
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      chartCanvas.width = dw * dpr;
-      chartCanvas.height = dh * dpr;
-      ctx.scale(dpr, dpr);
-
-      ctx.clearRect(0, 0, dw, dh);
-
-      // Grid lines
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
-      ctx.lineWidth = 1;
-      for (let i = 1; i <= 3; i++) {
-        const y = (dh / 4) * i;
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(dw, y);
-        ctx.stroke();
-      }
-
-      // Data points (Daily dynamics of sales)
-      const rawPoints = [
-        { x: 0, y: 0.82 },
-        { x: 0.16, y: 0.72 },
-        { x: 0.33, y: 0.74 },
-        { x: 0.52, y: 0.48 },
-        { x: 0.68, y: 0.52 },
-        { x: 0.84, y: 0.28 },
-        { x: 1.0, y: 0.16 }
-      ];
-
-      const pts = rawPoints.map(p => ({
-        x: p.x * dw,
-        y: (p.y * (dh - 24)) + 12
-      }));
-
-      // Fill area gradient
-      const fillGrad = ctx.createLinearGradient(0, 0, 0, dh);
-      fillGrad.addColorStop(0, 'rgba(160, 32, 255, 0.45)');
-      fillGrad.addColorStop(0.65, 'rgba(147, 18, 255, 0.12)');
-      fillGrad.addColorStop(1, 'rgba(147, 18, 255, 0)');
-
-      ctx.beginPath();
-      ctx.moveTo(pts[0].x, pts[0].y);
-      for (let i = 1; i < pts.length; i++) {
-        const mx = (pts[i].x + pts[i - 1].x) / 2;
-        const my = (pts[i].y + pts[i - 1].y) / 2;
-        ctx.quadraticCurveTo(pts[i - 1].x, pts[i - 1].y, mx, my);
-      }
-      ctx.lineTo(dw, dh);
-      ctx.lineTo(0, dh);
-      ctx.closePath();
-      ctx.fillStyle = fillGrad;
-      ctx.fill();
-
-      // Stroke line
-      ctx.beginPath();
-      ctx.moveTo(pts[0].x, pts[0].y);
-      for (let i = 1; i < pts.length; i++) {
-        const mx = (pts[i].x + pts[i - 1].x) / 2;
-        const my = (pts[i].y + pts[i - 1].y) / 2;
-        ctx.quadraticCurveTo(pts[i - 1].x, pts[i - 1].y, mx, my);
-      }
-      ctx.strokeStyle = '#a020ff';
-      ctx.lineWidth = 2.5;
-      ctx.shadowColor = 'rgba(160, 32, 255, 0.6)';
-      ctx.shadowBlur = 10;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      // X-axis time labels
-      ctx.fillStyle = '#8b8988';
-      ctx.font = '10px "JetBrains Mono", monospace';
-      ctx.textAlign = 'center';
-      const labels = ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'];
-      labels.forEach((lbl, idx) => {
-        const x = (dw / (labels.length - 1)) * idx;
-        ctx.fillText(lbl, x === 0 ? 16 : (x === dw ? dw - 16 : x), dh - 2);
-      });
-    }
-
-    window.addEventListener('resize', drawChart, { passive: true });
-    requestAnimationFrame(drawChart);
-  }
-
-  /* ==========================================================================
-     6. One-Timeline Entrance Motion
+     5. One-Timeline Entrance Motion
      ========================================================================== */
   function runEntranceTimeline() {
     if (prefersReducedMotion) {
-      document.querySelectorAll('#site-nav, .headline-line, #hero-lede, #hero-buttons, #dashboard-panel, .dash-stagger')
+      document.querySelectorAll('#site-nav, .headline-line, #hero-lede, #hero-buttons')
         .forEach(el => el.classList.add('entered'));
       return;
     }
@@ -393,8 +294,6 @@
     const line2 = document.querySelector('.headline-line.line-2');
     const lede = document.getElementById('hero-lede');
     const buttons = document.getElementById('hero-buttons');
-    const dash = document.getElementById('dashboard-panel');
-    const staggers = document.querySelectorAll('.dash-stagger');
 
     setTimeout(() => { if (nav) nav.classList.add('entered'); }, 60);
     setTimeout(() => { if (line1) line1.classList.add('entered'); }, 180);
@@ -403,16 +302,6 @@
       if (lede) lede.classList.add('entered');
       if (buttons) buttons.classList.add('entered');
     }, 480);
-    setTimeout(() => {
-      if (dash) dash.classList.add('entered');
-    }, 600);
-    setTimeout(() => {
-      staggers.forEach((item, idx) => {
-        setTimeout(() => {
-          item.classList.add('entered');
-        }, idx * 70);
-      });
-    }, 750);
   }
 
   /* ==========================================================================
@@ -423,7 +312,6 @@
     initRimFallbackCanvas();
     initPlanetVideo();
     initStageScaling();
-    initHeroChart();
     runEntranceTimeline();
   }
 

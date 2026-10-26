@@ -64,7 +64,7 @@
   </script>
 </head>
 
-<body class="antialiased selection:bg-[#9312ff]/40 selection:text-white overflow-x-hidden text-[#f7f7f8] bg-[#000000]">
+<body class="antialiased selection:bg-[#9312ff]/40 selection:text-white text-[#f7f7f8] bg-[#000000]">
 
   <!-- Fixed Procedural Stars Canvas (Sky background, rule: only video moves sky) -->
   <canvas id="stars-canvas"></canvas>
@@ -80,8 +80,8 @@
         (function() {
           var vw = window.innerWidth, vh = window.innerHeight;
           if (vw >= 900 && (vw >= 1024 || vh <= vw)) {
-            var s = Math.min(vw / 1672, vh / 941);
-            var h = Math.max(vh, Math.round(1140 * s));
+            var s = Math.min(vw / 1672, vh / 720);
+            var h = Math.max(Math.round(720 * s), Math.min(vh, 720));
             document.write('<style>#stage{transform: translateX(-50%) scale(' + s + ') !important;} #hero-stage-wrapper{height:' + h + 'px !important;}</style>');
           }
         })();
@@ -165,239 +165,9 @@
         </div>
       </div>
 
-      <!-- Dashboard Panel (1204px wide, from y = 651 design px, rounded 14px, dark glass with violet border) -->
-      <div id="dashboard-panel">
-        
-        <!-- Thin glowing violet line along top edge -->
-        <div class="dashboard-top-line"></div>
-
-        <!-- Dashboard glow strip image (mix-blend-mode: screen) -->
-        <img class="dashboard-glow-strip" 
-          src="e0e14572-12e1-4c08-b471-a21521844945.png" 
-          alt="Dashboard Accent Glow">
-
-        <!-- Dashboard Internal Grid -->
-        <div class="dashboard-grid">
-
-          <!-- 1. SIDEBAR -->
-          <aside class="dashboard-sidebar dash-stagger" id="dash-sidebar">
-            <div>
-              <!-- Brand + Gear -->
-              <div class="sidebar-header">
-                <div class="sidebar-brand">
-                  <div class="sidebar-brand-icon">
-                    <svg viewBox="0 0 24 24">
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                    </svg>
-                  </div>
-                  <span>Zapline</span>
-                </div>
-                <button class="sidebar-gear-btn" aria-label="Settings">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                  </svg>
-                </button>
-              </div>
-
-              <!-- Search -->
-              <div class="sidebar-search">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input type="text" placeholder="Search" value="Search" readonly>
-              </div>
-
-              <!-- Nav links -->
-              <div class="sidebar-nav">
-                <a href="#dashboard" class="sidebar-nav-item active">
-                  <span class="sidebar-nav-label">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="3" width="7" height="7"></rect>
-                      <rect x="14" y="3" width="7" height="7"></rect>
-                      <rect x="14" y="14" width="7" height="7"></rect>
-                      <rect x="3" y="14" width="7" height="7"></rect>
-                    </svg>
-                    <span>Dashboard</span>
-                  </span>
-                </a>
-                <a href="#snipes" class="sidebar-nav-item">
-                  <span class="sidebar-nav-label">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
-                    <span>Snipes</span>
-                  </span>
-                  <span class="badge-live">Live</span>
-                </a>
-                <a href="#wallets" class="sidebar-nav-item">
-                  <span class="sidebar-nav-label">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                      <path d="M6 10h12"></path>
-                    </svg>
-                    <span>Wallets</span>
-                  </span>
-                </a>
-                <a href="#pricing" class="sidebar-nav-item">
-                  <span class="sidebar-nav-label">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="12" y1="1" x2="12" y2="23"></line>
-                      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                    </svg>
-                    <span>Pricing</span>
-                  </span>
-                </a>
-                <a href="#settings" class="sidebar-nav-item">
-                  <span class="sidebar-nav-label">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="3"></circle>
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                    </svg>
-                    <span>Settings</span>
-                  </span>
-                </a>
-                <a href="#disconnect" class="sidebar-nav-item sidebar-disconnect">
-                  <span class="sidebar-nav-label">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                      <polyline points="16 17 21 12 16 7"></polyline>
-                      <line x1="21" y1="12" x2="9" y2="12"></line>
-                    </svg>
-                    <span>Disconnect</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Zapline Pro Promo Card -->
-            <div class="pro-card">
-              <div class="pro-card-header">
-                <span class="pro-title">Zapline Pro</span>
-                <span class="pro-badge">v2.4</span>
-              </div>
-              <p class="pro-desc">Sub-millisecond execution &amp; priority block relay.</p>
-              <a href="#pricing" class="btn-pro-upgrade">Upgrade</a>
-            </div>
-          </aside>
-
-          <!-- 2. MAIN DASHBOARD CONTENT -->
-          <div class="dashboard-main">
-
-            <!-- Top bar: network status & Alex T. 0x3f4…9c7e -->
-            <div class="dashboard-topbar dash-stagger" id="dash-topbar">
-              <div class="topbar-network">
-                <div class="network-pill">
-                  <span class="dot-live"></span>
-                  <span>Solana / Ethereum Mainnet</span>
-                </div>
-                <span class="block-info">Block: #248,192,842</span>
-              </div>
-
-              <div class="topbar-user">
-                <div class="icon-btn" aria-label="Notifications">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                  </svg>
-                </div>
-                <div class="user-pill">
-                  <div class="user-avatar">A</div>
-                  <span style="font-weight: 600; color: #f1f5f9;">Alex T.</span>
-                  <span class="user-wallet">0x3f4…9c7e</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Stats: Revenue generated & Active wallets/users -->
-            <div class="dashboard-stats-row dash-stagger" id="dash-stats">
-              <div class="stat-card">
-                <div class="stat-header">
-                  <span class="stat-label">Revenue generated (since inception)</span>
-                  <span class="stat-badge positive">+12.5%</span>
-                </div>
-                <div class="stat-value">$214,402</div>
-              </div>
-
-              <div class="stat-card">
-                <div class="stat-header">
-                  <span class="stat-label">Active wallets/users</span>
-                  <span class="stat-badge negative">−3.1%</span>
-                </div>
-                <div class="stat-value">6,412</div>
-              </div>
-            </div>
-
-            <!-- Lower Row: Daily dynamics of sales chart & January 2024 calendar breakdown -->
-            <div class="dashboard-lower-grid dash-stagger" id="dash-lower">
-              
-              <!-- Chart: Daily dynamics of sales -->
-              <div class="chart-card">
-                <div class="card-title-bar">
-                  <div>
-                    <div class="card-title">Daily dynamics of sales</div>
-                    <div class="card-subtitle">Trading volume &amp; high-frequency volume</div>
-                  </div>
-                  <span class="badge-live" style="background: rgba(160, 32, 255, 0.2); color: #d8b4fe;">Live Feed</span>
-                </div>
-                <div class="chart-container">
-                  <canvas id="sales-chart-canvas"></canvas>
-                </div>
-              </div>
-
-              <!-- Calendar: January 2024 Breakdown -->
-              <div class="calendar-card">
-                <div class="card-title-bar" style="border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;">
-                  <div>
-                    <div class="card-title">January 2024</div>
-                    <div class="card-subtitle">Start date–Now (monthly)</div>
-                  </div>
-                </div>
-
-                <div class="calendar-rows">
-                  <div class="calendar-row">
-                    <span class="calendar-row-label">Total snipes</span>
-                    <span class="calendar-row-val">
-                      1,284 <span class="stat-badge positive" style="font-size: 10px; padding: 1px 4px;">+8.4%</span>
-                    </span>
-                  </div>
-
-                  <div class="calendar-row">
-                    <span class="calendar-row-label">Avg. execution</span>
-                    <span class="calendar-row-val" style="color: var(--green);">0.42s</span>
-                  </div>
-
-                  <div class="calendar-row">
-                    <span class="calendar-row-label">Win rate</span>
-                    <span class="calendar-row-val">
-                      68.2% <span class="stat-badge positive" style="font-size: 10px; padding: 1px 4px;">+2.1%</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="connected-apps-wrap">
-                  <div class="connected-title">Connected apps</div>
-                  <div class="app-chips">
-                    <span class="app-chip">Charting</span>
-                    <span class="app-chip">Terminals</span>
-                    <span class="app-chip featured">Zapline Engine</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
-
-  </div>
   </header>
+
 
   <!-- =========================================================================
        4-PILLAR HIGHLIGHTS STRIP (Pure Code, Dark Glass, Zero Bloat)
@@ -739,134 +509,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       CORE ENGINEERING SECTION (#core-engineering-section)
-       ========================================================================= -->
-  <section id="core-engineering-section" class="min-h-screen flex flex-col p-6 sm:p-12 text-slate-200 items-center justify-center relative liquid-ambient-wrap bg-[#000000]">
-    <div class="liquid-orb liquid-orb-violet w-[32rem] h-[32rem] -top-24 -left-24"></div>
-    <div class="liquid-orb liquid-orb-cyan w-[28rem] h-[28rem] top-1/3 -right-20 liquid-orb-reverse"></div>
-
-    <div class="max-w-7xl w-full flex flex-col items-center text-center mb-12 lg:mb-16 z-20">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-xs text-purple-300 liquid-glass-pill shadow-sm">
-        <iconify-icon icon="solar:box-minimalistic-linear" class="text-base"></iconify-icon>
-        <span class="font-medium tracking-wide uppercase">Core Engineering</span>
-      </div>
-      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white font-display">
-        Architecting resilient <br class="hidden sm:block">digital flagships.
-      </h2>
-    </div>
-
-    <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
-
-      <!-- Card 1: Three.js Spatial Architecture -->
-      <div class="relative h-[36rem] liquid-glass-card rounded-[2rem] overflow-hidden flex flex-col group">
-        <div class="px-8 pt-10 flex flex-col items-start relative z-30 pointer-events-none">
-          <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-slate-300 mb-6 bg-white/5 border border-white/10">
-            <iconify-icon icon="solar:3d-cube-sphere-linear" class="text-purple-400"></iconify-icon>
-            <span class="font-medium">Ideate</span>
-          </div>
-          <h3 class="text-2xl font-bold tracking-tight text-white mb-2">Spatial Architecture</h3>
-          <p class="text-sm font-normal text-[#8b8988] leading-relaxed max-w-[95%]">
-            Visualizing multi-dimensional WebGL structures, physics interaction, and smooth fluid motion.
-          </p>
-        </div>
-
-        <div id="three-container" class="absolute inset-0 w-full h-full pt-32 cursor-move z-10"></div>
-
-        <div class="absolute bottom-0 left-0 w-full h-32 z-20 pointer-events-none bg-gradient-to-t from-[#0a0814] via-[#0a0814]/80 to-transparent"></div>
-
-        <div class="absolute bottom-6 left-8 flex items-center gap-3 z-30">
-          <div class="relative flex h-2 w-2 items-center justify-center">
-            <div class="absolute h-full w-full rounded-full bg-purple-400 opacity-75 animate-ping"></div>
-            <div class="relative h-1.5 w-1.5 rounded-full bg-purple-500 shadow-[0_0_5px_#a020ff]"></div>
-          </div>
-          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">Interactive WebGL</span>
-        </div>
-      </div>
-
-      <!-- Card 2: Matter.js Physics Tags -->
-      <div class="relative h-[36rem] liquid-glass-card rounded-[2rem] flex flex-col overflow-hidden group">
-        <div class="px-8 pt-10 flex flex-col items-start text-left relative z-30 pointer-events-none">
-          <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-slate-300 mb-6 bg-white/5 border border-white/10">
-            <iconify-icon icon="solar:cpu-bolt-linear" class="text-purple-400"></iconify-icon>
-            <span class="font-medium">Construct</span>
-          </div>
-          <h3 class="text-2xl font-bold tracking-tight text-white mb-2">Dynamic Ecosystems</h3>
-          <p class="text-sm font-normal text-[#8b8988] leading-relaxed max-w-[95%]">
-            Composing modular interactive systems, physics-based UI elements, and reactive state trees.
-          </p>
-        </div>
-
-        <div id="physics-container" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-10 pt-28">
-          <div class="physics-tag absolute px-4 py-2 rounded-full bg-[#181230] border border-purple-500/40 text-purple-200 text-xs font-semibold shadow-lg">Next.js 14</div>
-          <div class="physics-tag absolute px-4 py-2 rounded-full bg-[#141b2d] border border-cyan-500/40 text-cyan-200 text-xs font-semibold shadow-lg">Three.js</div>
-          <div class="physics-tag absolute px-4 py-2 rounded-full bg-[#1b122c] border border-purple-500/40 text-purple-200 text-xs font-semibold shadow-lg">WebSockets</div>
-          <div class="physics-tag absolute px-4 py-2 rounded-full bg-[#11241f] border border-emerald-500/40 text-emerald-200 text-xs font-semibold shadow-lg">TypeScript</div>
-          <div class="physics-tag absolute px-4 py-2 rounded-full bg-[#20152b] border border-purple-500/40 text-purple-200 text-xs font-semibold shadow-lg">Tailwind</div>
-          <div class="physics-tag absolute px-4 py-2 rounded-full bg-[#241712] border border-orange-500/40 text-orange-200 text-xs font-semibold shadow-lg">Cloudflare</div>
-        </div>
-
-        <div class="absolute bottom-0 left-0 w-full h-28 z-20 pointer-events-none bg-gradient-to-t from-[#0a0814] via-[#0a0814]/80 to-transparent"></div>
-
-        <div class="absolute bottom-6 left-8 flex items-center gap-3 z-30">
-          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">Interactive Matter.js Canvas</span>
-        </div>
-      </div>
-
-      <!-- Card 3: Performance Gauge & Architecture -->
-      <div class="relative h-[36rem] liquid-glass-card rounded-[2rem] p-8 flex flex-col justify-between group">
-        <div>
-          <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-slate-300 mb-6 bg-white/5 border border-white/10 w-fit">
-            <iconify-icon icon="solar:shield-check-linear" class="text-purple-400"></iconify-icon>
-            <span class="font-medium">Maintain</span>
-          </div>
-          <h3 class="text-2xl font-bold tracking-tight text-white mb-2">Automated Resilience</h3>
-          <p class="text-sm font-normal text-[#8b8988] leading-relaxed mb-6">
-            Continuous health telemetry, sub-second latency budgets, and real-time error prevention.
-          </p>
-
-          <div class="space-y-4">
-            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
-              <div class="flex items-center justify-between text-xs mb-2">
-                <span class="text-slate-400">Google Lighthouse Score</span>
-                <span class="font-mono font-bold text-emerald-400">100 / 100</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                <div class="w-full h-full bg-gradient-to-r from-purple-500 to-emerald-400"></div>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
-              <div class="flex items-center justify-between text-xs mb-2">
-                <span class="text-slate-400">First Contentful Paint (FCP)</span>
-                <span class="font-mono font-bold text-cyan-400">0.28s</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                <div class="w-[94%] h-full bg-gradient-to-r from-purple-500 to-cyan-400"></div>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
-              <div class="flex items-center justify-between text-xs mb-2">
-                <span class="text-slate-400">Cumulative Layout Shift (CLS)</span>
-                <span class="font-mono font-bold text-purple-400">0.000</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                <div class="w-full h-full bg-purple-500"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-white/10 text-xs text-slate-400 flex items-center justify-between">
-          <span>Target: Zero runtime downtime</span>
-          <span class="text-emerald-400 font-mono font-bold">● Operational</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1572,7 +1214,6 @@
 
 
   <!-- Heavy External Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
@@ -1580,7 +1221,6 @@
   <script src="js/navigation.js"></script>
   <script src="js/hero-royal-violet.js"></script>
   <script src="js/stats-counter.js"></script>
-  <script src="js/core-engineering.js"></script>
   <script src="js/pricing-toggle.js"></script>
   <script src="js/globe.js"></script>
   <script src="js/agency-features.js"></script>
