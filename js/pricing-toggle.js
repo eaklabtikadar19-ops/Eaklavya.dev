@@ -26,18 +26,18 @@
     const rightLeft = containerWidth - thumbWidth - padding;
 
     if (isOneTime) {
-      // Move to right side (One-Time)
+      // Move to right side (100% Buyout)
       toggleThumb.style.transform = `translateX(${rightLeft - padding}px)`;
-      if (toggleText) toggleText.innerText = 'One-Time';
+      if (toggleText) toggleText.innerText = '100% Buyout';
       if (toggleIcon) {
         toggleIcon.setAttribute('icon', 'solar:wallet-money-linear');
       }
 
       if (labelMonthly) {
-        labelMonthly.className = 'text-[15px] font-medium transition-colors duration-300 text-[#8b8988]';
+        labelMonthly.className = 'text-[14px] font-medium transition-colors duration-300 text-[#8b8988]';
       }
       if (labelYearly) {
-        labelYearly.className = 'text-[15px] font-semibold transition-colors duration-300 text-white';
+        labelYearly.className = 'text-[14px] font-semibold transition-colors duration-300 text-white';
       }
 
       toggleContainer.style.borderColor = 'rgba(160, 32, 255, 0.5)';
@@ -45,18 +45,18 @@
       toggleThumb.style.background = 'linear-gradient(135deg, #a020ff 0%, #7a1cf8 100%)';
       toggleThumb.style.color = '#ffffff';
     } else {
-      // Move to left side (Monthly)
+      // Move to left side (Monthly Retainer)
       toggleThumb.style.transform = 'translateX(0px)';
-      if (toggleText) toggleText.innerText = 'Monthly';
+      if (toggleText) toggleText.innerText = 'Monthly Retainer';
       if (toggleIcon) {
         toggleIcon.setAttribute('icon', 'solar:calendar-linear');
       }
 
       if (labelMonthly) {
-        labelMonthly.className = 'text-[15px] font-semibold transition-colors duration-300 text-white';
+        labelMonthly.className = 'text-[14px] font-semibold transition-colors duration-300 text-white';
       }
       if (labelYearly) {
-        labelYearly.className = 'text-[15px] font-medium transition-colors duration-300 text-[#8b8988]';
+        labelYearly.className = 'text-[14px] font-medium transition-colors duration-300 text-[#8b8988]';
       }
 
       toggleContainer.style.borderColor = 'rgba(255, 255, 255, 0.15)';

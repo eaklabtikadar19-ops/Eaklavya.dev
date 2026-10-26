@@ -7,183 +7,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initPaymentCalculator();
   initContactForm();
   initLegalModals();
   initCaseStudyModals();
 });
-
 /* ==========================================================================
-   1. Website Ownership & Payment Calculator
-   ========================================================================== */
-function initPaymentCalculator() {
-  const packageSelect = document.getElementById('calc-package-select');
-  const installmentSlider = document.getElementById('calc-installment-slider');
-  const sliderLabel = document.getElementById('calc-slider-current-step');
-  
-  const totalValEl = document.getElementById('calc-total-val');
-  const installmentValEl = document.getElementById('calc-installment-val');
-  const totalStepsEl = document.getElementById('calc-total-steps');
-  const paidSoFarEl = document.getElementById('calc-paid-so-far');
-  const remainingBalEl = document.getElementById('calc-remaining-balance');
-  const finalPaymentNoticeEl = document.getElementById('calc-final-payment-notice');
-  const onetimeAltEl = document.getElementById('calc-onetime-alt');
-  const scheduleBreakdownEl = document.getElementById('calc-schedule-breakdown');
-
-  if (!packageSelect || !installmentSlider) return;
-
-  const packages = {
-    basic: {
-      name: 'Basic Package',
-      total: 7000,
-      regularInstallment: 1500,
-      installmentsCount: 5,
-      payments: [1500, 1500, 1500, 1500, 1000], // 4x 1,500 + 1x 1,000 = 7,000
-      milestones: [
-        'Month 1: Creative Discovery, Sitemap & Staging Setup (FREE Cloud Hosting)',
-        'Month 2: Up to 5 Custom Pages Core Development & Responsive Layouts',
-        'Month 3: Contact Form, WhatsApp Integration & Design Revision Round 1',
-        'Month 4: On-Page SEO, Analytics Setup, Pre-Launch Testing & Revision Round 2',
-        'Month 5: Final Review, Live Domain Launch & 100% Source Code / IP Handover'
-      ],
-      finalNote: 'Final 5th payment is ₹1,000 (saves ₹500 on regular installment) • 100% IP Transfer',
-      onetime: '₹7,000 upfront purchase (100% ownership at launch)'
-    },
-    professional: {
-      name: 'Professional Package (Recommended)',
-      total: 10000,
-      regularInstallment: 2500,
-      installmentsCount: 4,
-      payments: [2500, 2500, 2500, 2500], // 4x 2,500 = 10,000
-      milestones: [
-        'Month 1: Bespoke UI/UX Blueprint, Wireframes & Staging Setup (FREE Cloud Hosting)',
-        'Month 2: Up to 10 Pages Engineering, Micro-Animations & Conversion CTAs',
-        'Month 3: Core Web Vitals Tuning, GA4/Search Console Setup & 3 Revisions',
-        'Month 4: Live Domain Launch, Agreed Maintenance & 100% Source Code / IP Handover'
-      ],
-      finalNote: 'All 4 payments are equal ₹2,500 installments • 100% IP Transfer',
-      onetime: '₹10,000 upfront purchase (100% ownership at launch)'
-    },
-    premium: {
-      name: 'Premium Package',
-      total: 12500,
-      regularInstallment: 3500,
-      installmentsCount: 4,
-      payments: [3500, 3500, 3500, 2000], // 3x 3,500 + 1x 2,000 = 12,500
-      milestones: [
-        'Month 1: Custom Design System, Visual Direction & Staging Setup (FREE Cloud Hosting)',
-        'Month 2: Advanced Layouts, Interactions, Multi-Step Forms & Custom Integrations',
-        'Month 3: Structured Data, Technical SEO, Analytics Events & 4 Revisions',
-        'Month 4: Production Launch, Priority Support Agreement & 100% Code / IP Handover'
-      ],
-      finalNote: 'Final 4th payment is ₹2,000 (saves ₹1,500 on regular installment) • 100% IP Transfer',
-      onetime: '₹12,500 upfront purchase (100% ownership at launch)'
-    }
-  };
-
-  function formatINR(val) {
-    return '₹' + Number(val).toLocaleString('en-IN');
-  }
-
-  function updateCalculator() {
-    const selectedKey = packageSelect.value || 'professional';
-    const pkg = packages[selectedKey];
-    if (!pkg) return;
-
-    // Adjust slider bounds
-    installmentSlider.max = pkg.installmentsCount;
-    let currentStep = parseInt(installmentSlider.value, 10);
-    if (currentStep > pkg.installmentsCount) {
-      currentStep = pkg.installmentsCount;
-      installmentSlider.value = currentStep;
-    }
-    if (currentStep < 1) {
-      currentStep = 1;
-      installmentSlider.value = currentStep;
-    }
-
-    if (sliderLabel) {
-      sliderLabel.textContent = `Installment ${currentStep} of ${pkg.installmentsCount}`;
-    }
-
-    // Calculate totals based on currentStep
-    let paid = 0;
-    for (let i = 0; i < currentStep; i++) {
-      paid += pkg.payments[i];
-    }
-    const remaining = pkg.total - paid;
-
-    if (totalValEl) totalValEl.textContent = formatINR(pkg.total);
-    if (installmentValEl) installmentValEl.textContent = formatINR(pkg.payments[0]) + '/mo';
-    if (totalStepsEl) totalStepsEl.textContent = `${pkg.installmentsCount} Monthly Payments`;
-    if (paidSoFarEl) paidSoFarEl.textContent = formatINR(paid);
-    if (remainingBalEl) remainingBalEl.textContent = formatINR(remaining);
-    if (finalPaymentNoticeEl) finalPaymentNoticeEl.textContent = pkg.finalNote;
-    if (onetimeAltEl) onetimeAltEl.textContent = pkg.onetime;
-
-    // Render schedule timeline breakdown with milestone deliverables
-    if (scheduleBreakdownEl) {
-      scheduleBreakdownEl.innerHTML = '';
-      pkg.payments.forEach((amt, index) => {
-        const stepNum = index + 1;
-        const isPaid = stepNum <= currentStep;
-        const isCurrent = stepNum === currentStep;
-        const milestoneDesc = pkg.milestones && pkg.milestones[index] ? pkg.milestones[index] : `Month ${stepNum} Milestone Deliverable`;
-
-        const item = document.createElement('div');
-        item.className = `flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-xl border text-xs gap-2 transition-all ${
-          isCurrent
-            ? 'bg-purple-500/20 border-purple-500/50 text-purple-200 font-semibold shadow-sm ring-1 ring-purple-500/30'
-            : isPaid
-            ? 'bg-white/10 border-white/15 text-slate-200'
-            : 'bg-white/5 border-white/10 text-slate-400'
-        }`;
-
-        item.innerHTML = `
-          <div class="flex items-start sm:items-center gap-2.5">
-            <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5 sm:mt-0 ${
-              isPaid ? 'bg-[#a020ff] text-white shadow-[0_0_8px_rgba(160,32,255,0.6)]' : 'bg-white/10 text-slate-400'
-            }">${stepNum}</span>
-            <div class="flex flex-col">
-              <span class="font-semibold text-white">Month ${stepNum} Deliverable</span>
-              <span class="text-[11px] ${isCurrent ? 'text-purple-300 font-medium' : 'text-slate-400'}">${milestoneDesc}</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
-            <span class="font-mono text-sm font-bold text-white">${formatINR(amt)}</span>
-            <span class="text-[10px] px-2 py-0.5 rounded-full ${
-              isPaid ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-medium' : 'bg-white/5 text-slate-500'
-            }">${isPaid ? (isCurrent ? 'Active Stage' : 'Milestone Unlocked') : 'Scheduled'}</span>
-          </div>
-        `;
-        scheduleBreakdownEl.appendChild(item);
-      });
-    }
-  }
-
-  packageSelect.addEventListener('change', () => {
-    installmentSlider.value = 1;
-    updateCalculator();
-  });
-
-  installmentSlider.addEventListener('input', updateCalculator);
-
-  // Allow clicking external package choose buttons
-  document.querySelectorAll('[data-select-package]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const targetPkg = btn.getAttribute('data-select-package');
-      if (packages[targetPkg]) {
-        packageSelect.value = targetPkg;
-        updateCalculator();
-      }
-    });
-  });
-
-  updateCalculator();
-}
-
-/* ==========================================================================
-   2. Contact & Project Onboarding Form
+   1. Contact & Project Onboarding Form
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('project-onboarding-form');
@@ -313,11 +142,11 @@ function initLegalModals() {
       `
     },
     refunds: {
-      title: 'Payment & Refund Policy',
+      title: 'Payment & Pricing Terms',
       content: `
-        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Payment Structure</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Flexible Payment Options</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          Clients can choose between a one-time upfront purchase or fixed monthly installment terms (Basic: 5 installments, Professional: 4 installments, Premium: 4 installments).
+          Clients can choose between a monthly managed retainer (Basic: ₹1,500/mo, Professional: ₹2,500/mo, Premium: ₹3,500/mo) or a 100% full website buyout (Basic: ₹7,000, Professional: ₹10,000, Premium: ₹12,500 one-time). After full buyout, optional ongoing management and repair maintenance drops to just ₹500/month.
         </p>
         <h4 class="text-base font-semibold text-slate-900 mb-2">2. Milestone Approvals &amp; Refunds</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
@@ -330,28 +159,28 @@ function initLegalModals() {
       `
     },
     cancellation: {
-      title: 'Cancellation & Late Payment Policy',
+      title: 'Cancellation & Retainer Policy',
       content: `
-        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Grace Period</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Monthly Retainer Terms</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          A 7-day grace period is provided for all scheduled installment invoices. We will notify you via email and WhatsApp if an installment is pending.
+          Monthly retainer subscriptions cover ongoing cloud hosting, updates, and active technical management. You can cancel your monthly retainer anytime with 7 days advance notice, or switch to a full website buyout.
         </p>
-        <h4 class="text-base font-semibold text-slate-900 mb-2">2. Project Pausing</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">2. Transitioning to Full Buyout</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          Invoices overdue past 14 days may result in active development pausing until payments are reconciled. Work resumes immediately upon receipt with an updated launch timeline.
+          If you no longer wish to pay the monthly retainer, you can purchase the website outright (₹7,000 for Basic, ₹10,000 for Professional, ₹12,500 for Premium) to take 100% ownership of all source code, assets, and design files.
         </p>
-        <h4 class="text-base font-semibold text-slate-900 mb-2">3. Voluntary Project Cancellation</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">3. Post-Buyout Maintenance at ₹500/mo</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          Clients may cancel an ongoing project with 7 business days written notice. You will receive all code, visual assets, and deliverables completed up to the date of settlement.
+          Once you own the website, you are not locked into monthly fees. Whenever you need future repairs, technical maintenance, or minor updates, you can re-activate support at a reduced rate of only ₹500/month!
         </p>
       `
     },
     ownership: {
       title: 'Website Ownership & Intellectual Property',
       content: `
-        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Full Ownership Upon Final Payment</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Full Ownership Upon Buyout</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          Once your agreed purchase price (whether paid one-time or across installments) is settled in full, 100% of the website code, custom visual assets, brand graphics, and database contents transfer entirely to you.
+          Once your website buyout is settled in full, 100% of the website code, custom visual assets, brand graphics, and repository contents transfer entirely to you.
         </p>
         <h4 class="text-base font-semibold text-slate-900 mb-2">2. No Vendor Lock-In</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
