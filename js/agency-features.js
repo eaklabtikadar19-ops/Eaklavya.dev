@@ -159,19 +159,23 @@ function initLegalModals() {
       `
     },
     cancellation: {
-      title: 'Cancellation & Retainer Policy',
+      title: 'Rental & Cancellation Policy',
       content: `
-        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Monthly Retainer Terms</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">1. Minimum Rental Period</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          Monthly retainer subscriptions cover ongoing cloud hosting, updates, and active technical management. You can cancel your monthly retainer anytime with 7 days advance notice, or switch to a full website buyout.
+          Basic has a 5-month minimum, and Professional and Premium have a 4-month minimum. This covers the upfront engineering and design of your custom website. After the minimum period, you can cancel anytime with 30 days’ written notice.
         </p>
-        <h4 class="text-base font-semibold text-slate-900 mb-2">2. Transitioning to Full Buyout</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">2. Cancelling or Buying During Minimum Period</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          If you no longer wish to pay the monthly retainer, you can purchase the website outright (₹7,000 for Basic, ₹10,000 for Professional, ₹12,500 for Premium) to take 100% ownership of all source code, assets, and design files.
+          Rent for the minimum period remains payable, so cancelling early means the remaining months are due. Alternatively, you can switch to 100% ownership at any time by paying the full Own price for your package (rent already paid is not credited toward purchase).
         </p>
-        <h4 class="text-base font-semibold text-slate-900 mb-2">3. Post-Buyout Maintenance at ₹500/mo</h4>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">3. Missed Payments &amp; Grace Period</h4>
         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-          Once you own the website, you are not locked into monthly fees. Whenever you need future repairs, technical maintenance, or minor updates, you can re-activate support at a reduced rate of only ₹500/month!
+          You will receive a notification reminder and a 7-day grace period for pending monthly rent. After 7 days, the website goes offline until the pending balance is reconciled. Missed months during the minimum period remain payable.
+        </p>
+        <h4 class="text-base font-semibold text-slate-900 mb-2">4. Post-Buyout Maintenance at ₹500/mo</h4>
+        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+          Once you own the website outright, you are never locked into monthly fees. Whenever you need future repairs, technical maintenance, or minor updates, you can re-activate support at a reduced rate of only ₹500/month!
         </p>
       `
     },
