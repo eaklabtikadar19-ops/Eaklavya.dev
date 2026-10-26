@@ -525,35 +525,61 @@
     <main class="max-w-6xl w-full mx-auto flex flex-col gap-14 relative z-10 my-10">
       
       <!-- Header & Toggle Switch -->
-      <header class="flex flex-col gap-8 z-20 text-center relative items-center">
+      <header class="flex flex-col gap-6 z-20 text-center relative items-center">
         <div class="space-y-4 flex flex-col items-center">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass-pill text-purple-300 text-xs font-medium tracking-wide shadow-sm">
-            <iconify-icon icon="solar:pie-chart-2-linear" class="text-base"></iconify-icon>
-            Transparent Pricing Model
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass-pill text-purple-300 text-xs font-semibold uppercase tracking-wider shadow-sm">
+            <iconify-icon icon="solar:shield-check-linear" class="text-base text-purple-400"></iconify-icon>
+            Transparent Investment &amp; Handover
           </div>
-          <h2 class="text-4xl lg:text-6xl font-medium tracking-tight leading-tight max-w-2xl text-white font-display">
-            Simple, Transparent <span class="royal-violet-gradient-text">Pricing</span>
+
+          <!-- Eye-catching Promo Banner for Free Hosting & % Off -->
+          <div class="inline-flex flex-wrap items-center justify-center gap-2.5 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-500/15 via-purple-500/15 to-cyan-500/15 border border-emerald-500/35 text-xs text-white shadow-[0_0_25px_rgba(16,185,129,0.2)]">
+            <div class="flex items-center gap-1.5 font-bold text-emerald-400">
+              <iconify-icon icon="solar:gift-bold" class="text-base text-emerald-400"></iconify-icon>
+              <span>100% FREE High-Speed Cloud Hosting &amp; SSL on All Packages</span>
+            </div>
+            <span class="hidden sm:inline text-white/30">•</span>
+            <div class="flex items-center gap-1.5 font-semibold text-purple-300">
+              <iconify-icon icon="solar:tag-price-bold" class="text-base text-purple-400"></iconify-icon>
+              <span>Zero Server Setup Fees • Save up to 25% with One-Time Payment</span>
+            </div>
+          </div>
+
+          <h2 class="text-4xl lg:text-6xl font-medium tracking-tight leading-tight max-w-3xl text-white font-display">
+            Transparent Plans, <span class="royal-violet-gradient-text">Zero Hidden Costs</span>
           </h2>
-          <p class="text-base lg:text-lg text-[#8b8988] font-normal max-w-xl leading-relaxed">
-            No hidden fees — choose flexible monthly maintenance or one-time purchase with full ownership.
+          <p class="text-base lg:text-lg text-[#8b8988] font-normal max-w-2xl leading-relaxed">
+            Choose accessible monthly installments towards full ownership, or save with a one-time purchase. Every package includes written deliverables, agreed revisions, and pre-launch QA.
           </p>
         </div>
 
         <!-- Monthly vs One-Time Toggle -->
-        <div id="toggle-container" role="switch" aria-checked="false" tabindex="0" class="relative z-10 w-[270px] h-16 rounded-full p-1.5 flex items-center cursor-pointer group transition-all duration-500 outline-none focus-visible:ring-4 focus-visible:ring-purple-500/30 overflow-hidden border border-white/15 bg-[#120e24]">
-          <div class="absolute inset-0 flex items-center justify-between px-7 pointer-events-none select-none">
-            <span id="label-monthly" class="text-[15px] font-semibold transition-colors duration-300 text-white">
-              Monthly
-            </span>
-            <span id="label-yearly" class="text-[15px] font-medium transition-colors duration-300 text-[#8b8988]">
-              One-Time
-            </span>
-          </div>
+        <div class="flex flex-col items-center gap-3">
+          <div id="toggle-container" role="switch" aria-checked="false" tabindex="0" class="relative z-10 w-[280px] h-16 rounded-full p-1.5 flex items-center cursor-pointer group transition-all duration-500 outline-none focus-visible:ring-4 focus-visible:ring-purple-500/30 overflow-hidden border border-white/15 bg-[#120e24]">
+            <div class="absolute inset-0 flex items-center justify-between px-7 pointer-events-none select-none">
+              <span id="label-monthly" class="text-[14px] font-semibold transition-colors duration-300 text-white">
+                Monthly Plan
+              </span>
+              <span id="label-yearly" class="text-[14px] font-medium transition-colors duration-300 text-[#8b8988] flex items-center gap-1">
+                One-Time
+              </span>
+            </div>
 
-          <div id="toggle-thumb" class="absolute top-[6px] left-[6px] h-[52px] w-[130px] rounded-full flex items-center justify-center gap-2 px-3 whitespace-nowrap transition-all duration-300 bg-gradient-to-r from-[#a020ff] to-[#7a1cf8] text-white shadow-[0_0_15px_rgba(160,32,255,0.5)]">
-            <iconify-icon id="toggle-icon" icon="solar:calendar-linear" class="text-[20px] shrink-0"></iconify-icon>
-            <span id="toggle-text" class="text-[14px] font-bold tracking-[0.01em]">Monthly</span>
+            <div id="toggle-thumb" class="absolute top-[6px] left-[6px] h-[52px] w-[135px] rounded-full flex items-center justify-center gap-1.5 px-3 whitespace-nowrap transition-all duration-300 bg-gradient-to-r from-[#a020ff] to-[#7a1cf8] text-white shadow-[0_0_15px_rgba(160,32,255,0.5)]">
+              <iconify-icon id="toggle-icon" icon="solar:calendar-linear" class="text-[18px] shrink-0"></iconify-icon>
+              <span id="toggle-text" class="text-[13px] font-bold tracking-[0.01em]">Monthly Plan</span>
+            </div>
           </div>
+          <span class="text-[11px] font-semibold text-amber-300 bg-amber-400/10 border border-amber-400/25 px-3 py-1 rounded-full flex items-center gap-1">
+            <iconify-icon icon="solar:stars-minimalistic-bold" class="text-xs"></iconify-icon>
+            <span>One-Time Upfront Saves Up to 25% Off Total Installments</span>
+          </span>
+        </div>
+
+        <!-- Domain Transparency Callout Banner -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300 max-w-2xl text-center">
+          <iconify-icon icon="solar:info-circle-linear" class="text-purple-400 text-lg shrink-0"></iconify-icon>
+          <span><strong>Domain Registration Note:</strong> Domain cost depends on your chosen extension &amp; registrar (.com, .in, .org, etc.) and is billed separately at actual cost. We configure all domain DNS &amp; SSL records free of charge.</span>
         </div>
       </header>
 
@@ -561,9 +587,9 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-20 items-stretch max-w-6xl mx-auto w-full">
         
         <!-- 1. Basic Tier -->
-        <div class="liquid-glass-card liquid-glass-sheen rounded-[28px] p-8 flex flex-col justify-between group">
+        <div class="liquid-glass-card liquid-glass-sheen rounded-[28px] p-8 flex flex-col justify-between group border border-white/10 hover:border-purple-500/40 transition-all duration-300">
           <div>
-            <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center justify-between mb-4">
               <div class="w-12 h-12 rounded-2xl flex items-center justify-center bg-white/5 text-purple-400 border border-white/10 shadow-inner">
                 <iconify-icon icon="solar:shield-minimalistic-linear" class="text-2xl"></iconify-icon>
               </div>
@@ -573,115 +599,215 @@
             </div>
 
             <h3 class="text-2xl font-bold tracking-tight text-white mb-2">Basic</h3>
-            <p class="text-sm text-[#8b8988] font-normal leading-relaxed min-h-[44px]">
-              A professional online presence for founders, portfolios, and local businesses.
+            <p class="text-xs text-[#8b8988] font-normal leading-relaxed min-h-[38px]">
+              For individuals, startups, and small businesses that need a professional online presence.
             </p>
 
-            <div class="py-5 border-y border-white/10 my-6">
+            <!-- Free Hosting Highlight Badge -->
+            <div class="mt-3 mb-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-[11px] font-bold text-emerald-300 flex items-center gap-1.5">
+              <iconify-icon icon="solar:check-circle-bold" class="text-emerald-400 text-sm shrink-0"></iconify-icon>
+              <span>100% FREE High-Speed Cloud Hosting &amp; SSL</span>
+            </div>
+
+            <div class="py-4 border-y border-white/10 my-4">
               <div class="flex items-baseline gap-1.5">
                 <span class="text-4xl lg:text-5xl font-bold tracking-tight text-white price-val" data-monthly="₹1,500" data-onetime="₹7,000" style="font-family: 'JetBrains Mono', monospace;">₹1,500</span>
                 <span class="text-sm text-[#8b8988] font-medium price-period">/month</span>
               </div>
-              <div class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/40">
+              <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/40">
                 <iconify-icon icon="solar:tag-linear" class="text-sm shrink-0"></iconify-icon>
-                <span class="alt-price-val" data-monthly="Or ₹7,000 one-time purchase" data-onetime="Or ₹1,500/month subscription">Or ₹7,000 one-time purchase</span>
+                <span class="alt-price-val" data-monthly="Or ₹7,000 one-time purchase" data-onetime="Or ₹1,500/month installment">Or ₹7,000 one-time purchase</span>
               </div>
             </div>
 
-            <a href="#contact" data-choose-tier="basic" class="w-full py-3.5 mb-6 rounded-xl border border-white/15 bg-white/5 text-white text-sm font-semibold hover:bg-white/15 transition-all duration-200 text-center flex items-center justify-center gap-2">
-              <span>Choose Basic</span>
+            <a href="#contact" data-choose-tier="basic" class="w-full py-3 mb-6 rounded-xl border border-white/15 bg-white/5 text-white text-sm font-semibold hover:bg-white/15 hover:border-purple-500/50 transition-all duration-200 text-center flex items-center justify-center gap-2">
+              <span>Choose Basic Package</span>
               <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
             </a>
 
-            <div class="space-y-3.5">
-              <div class="text-xs font-bold tracking-wider uppercase text-slate-400 mb-3">What's included</div>
-              <ul class="flex flex-col gap-3 text-sm font-normal text-slate-300">
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
+            <div class="space-y-3">
+              <div class="text-xs font-bold tracking-wider uppercase text-slate-400 mb-2">Scope &amp; Deliverables:</div>
+              <ul class="flex flex-col gap-2.5 text-xs font-normal text-slate-300">
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
                   <span>Up to 5 custom-designed pages</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                  <span>100% responsive modern layout</span>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Modern, responsive layouts across all devices</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                  <span>Contact form &amp; WhatsApp integration</span>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Brand-aligned colours and typography</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                  <span>Core SEO setup &amp; speed audit</span>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Contact form and WhatsApp integration</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Essential on-page SEO setup</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Analytics integration where required</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Basic image and performance optimization</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Pre-launch testing &amp; quality checks</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Two rounds of design revisions</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Defined minor content updates &amp; technical maintenance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Standard support with stated response time</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Written project scope and ownership terms</span>
                 </li>
               </ul>
             </div>
           </div>
+          
+          <div class="mt-6 pt-4 border-t border-white/10 text-[11px] text-slate-400 text-center">
+            <span>*Domain name chosen by client &amp; billed separately at actuals</span>
+          </div>
         </div>
 
-        <!-- 2. Professional Tier (Featured - Glowing Royal Violet) -->
+        <!-- 2. Professional Tier (Featured - Recommended Package) -->
         <div class="relative flex flex-col transition-all duration-300 hover:-translate-y-2">
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-500/25 blur-[90px] rounded-full pointer-events-none z-0"></div>
 
           <div class="liquid-glass-card liquid-glass-sheen rounded-[28px] p-8 border-2 !border-purple-500/80 flex flex-col justify-between relative z-10 flex-1 ring-4 ring-purple-500/25 shadow-2xl">
             <div>
-              <div class="flex items-center justify-between mb-5">
+              <div class="flex items-center justify-between mb-4">
                 <div class="w-12 h-12 rounded-2xl flex items-center justify-center bg-gradient-to-tr from-[#a020ff] to-[#7a1cf8] text-white shadow-[0_0_20px_rgba(160,32,255,0.6)]">
                   <iconify-icon icon="solar:crown-star-bold" class="text-2xl"></iconify-icon>
                 </div>
                 <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-[#a020ff] to-[#7a1cf8] text-white uppercase tracking-wider shadow-sm">
-                  ★ Most Popular
+                  ★ Recommended Package
                 </span>
               </div>
 
               <h3 class="text-2xl font-bold tracking-tight text-white mb-2">Professional</h3>
-              <p class="text-sm text-slate-300 font-normal leading-relaxed min-h-[44px]">
-                High-converting website for established startups and revenue-driven businesses.
+              <p class="text-xs text-slate-300 font-normal leading-relaxed min-h-[38px]">
+                For growing businesses that need a distinctive, conversion-focused website.
               </p>
 
-              <div class="py-5 border-y border-white/15 my-6">
+              <!-- Free Hosting Highlight Badge -->
+              <div class="mt-3 mb-2 px-3 py-1.5 rounded-lg bg-emerald-500/15 border border-emerald-500/35 text-[11px] font-bold text-emerald-300 flex items-center gap-1.5 shadow-sm">
+                <iconify-icon icon="solar:check-circle-bold" class="text-emerald-400 text-sm shrink-0"></iconify-icon>
+                <span>100% FREE High-Speed Cloud Hosting &amp; SSL • Best Value</span>
+              </div>
+
+              <div class="py-4 border-y border-white/15 my-4">
                 <div class="flex items-baseline gap-1.5">
                   <span class="text-4xl lg:text-5xl font-bold tracking-tight text-white price-val" data-monthly="₹2,500" data-onetime="₹10,000" style="font-family: 'JetBrains Mono', monospace;">₹2,500</span>
                   <span class="text-sm text-slate-300 font-medium price-period">/month</span>
                 </div>
-                <div class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/30 text-purple-200 border border-purple-400/50 shadow-sm">
+                <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/30 text-purple-200 border border-purple-400/50 shadow-sm">
                   <iconify-icon icon="solar:tag-linear" class="text-sm shrink-0"></iconify-icon>
-                  <span class="alt-price-val" data-monthly="Or ₹10,000 one-time purchase" data-onetime="Or ₹2,500/month subscription">Or ₹10,000 one-time purchase</span>
+                  <span class="alt-price-val" data-monthly="Or ₹10,000 one-time purchase" data-onetime="Or ₹2,500/month installment">Or ₹10,000 one-time purchase</span>
                 </div>
               </div>
 
-              <a href="#contact" data-choose-tier="professional" class="btn-royal-violet w-full mb-6 !py-3.5 text-center flex items-center justify-center gap-2">
-                <span>Choose Professional</span>
+              <a href="#contact" data-choose-tier="professional" class="btn-royal-violet w-full mb-6 !py-3 text-center flex items-center justify-center gap-2">
+                <span>Choose Professional Package</span>
                 <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
               </a>
 
-              <div class="space-y-3.5">
-                <div class="text-xs font-bold tracking-wider uppercase text-purple-300 mb-3">All Basic Features Plus:</div>
-                <ul class="flex flex-col gap-3 text-sm font-normal text-slate-200">
-                  <li class="flex items-start gap-2.5">
-                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                    <span>Up to 10 custom-crafted pages</span>
+              <div class="space-y-3">
+                <div class="text-xs font-bold tracking-wider uppercase text-purple-300 mb-2">Everything in Basic, plus:</div>
+                <ul class="flex flex-col gap-2.5 text-xs font-normal text-slate-200">
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Up to 10 custom-designed pages</span>
                   </li>
-                  <li class="flex items-start gap-2.5">
-                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                    <span>Dynamic micro-animations &amp; hover physics</span>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Bespoke UI/UX design &amp; visual storytelling</span>
                   </li>
-                  <li class="flex items-start gap-2.5">
-                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                    <span>Full SEO &amp; Google Analytics 4 integration</span>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Advanced animations and micro-interactions</span>
                   </li>
-                  <li class="flex items-start gap-2.5">
-                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                    <span>Priority WhatsApp SLA support (<2h response)</span>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Custom sections and refined brand narrative</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Conversion-focused calls to action &amp; enquiry flows</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Expanded on-page SEO foundations</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Sitemap and search indexing configuration</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Google Analytics &amp; Search Console setup assistance</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Performance optimization &amp; Core Web Vitals checks</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Accessibility and cross-browser checks</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Social media integration and link previews</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Three rounds of design revisions</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Pre-launch QA and an agreed bug-fix period</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Defined minor updates and technical maintenance</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Priority support with a stated response time</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                    <span>Written deliverables and ownership terms</span>
                   </li>
                 </ul>
               </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/15 text-[11px] text-slate-300 text-center">
+              <span>*Domain name chosen by client &amp; billed separately at actuals</span>
             </div>
           </div>
         </div>
 
         <!-- 3. Premium Tier -->
-        <div class="liquid-glass-card liquid-glass-sheen rounded-[28px] p-8 flex flex-col justify-between group">
+        <div class="liquid-glass-card liquid-glass-sheen rounded-[28px] p-8 flex flex-col justify-between group border border-white/10 hover:border-purple-500/40 transition-all duration-300">
           <div>
-            <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center justify-between mb-4">
               <div class="w-12 h-12 rounded-2xl flex items-center justify-center bg-white/5 text-purple-400 border border-white/10 shadow-inner">
                 <iconify-icon icon="solar:diamond-linear" class="text-2xl"></iconify-icon>
               </div>
@@ -691,161 +817,310 @@
             </div>
 
             <h3 class="text-2xl font-bold tracking-tight text-white mb-2">Premium</h3>
-            <p class="text-sm text-[#8b8988] font-normal leading-relaxed min-h-[44px]">
-              Full digital flagship with bespoke spatial motion, 3D WebGL, and custom apps.
+            <p class="text-xs text-[#8b8988] font-normal leading-relaxed min-h-[38px]">
+              For brands that need a more sophisticated digital experience and additional customization.
             </p>
 
-            <div class="py-5 border-y border-white/10 my-6">
+            <!-- Free Hosting Highlight Badge -->
+            <div class="mt-3 mb-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-[11px] font-bold text-emerald-300 flex items-center gap-1.5">
+              <iconify-icon icon="solar:check-circle-bold" class="text-emerald-400 text-sm shrink-0"></iconify-icon>
+              <span>100% FREE High-Speed Cloud Hosting &amp; SSL Included</span>
+            </div>
+
+            <div class="py-4 border-y border-white/10 my-4">
               <div class="flex items-baseline gap-1.5">
                 <span class="text-4xl lg:text-5xl font-bold tracking-tight text-white price-val" data-monthly="₹3,500" data-onetime="₹12,500" style="font-family: 'JetBrains Mono', monospace;">₹3,500</span>
                 <span class="text-sm text-[#8b8988] font-medium price-period">/month</span>
               </div>
-              <div class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/40">
+              <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/40">
                 <iconify-icon icon="solar:tag-linear" class="text-sm shrink-0"></iconify-icon>
-                <span class="alt-price-val" data-monthly="Or ₹12,500 one-time purchase" data-onetime="Or ₹3,500/month subscription">Or ₹12,500 one-time purchase</span>
+                <span class="alt-price-val" data-monthly="Or ₹12,500 one-time purchase" data-onetime="Or ₹3,500/month installment">Or ₹12,500 one-time purchase</span>
               </div>
             </div>
 
-            <a href="#contact" data-choose-tier="premium" class="w-full py-3.5 mb-6 rounded-xl border border-white/15 bg-white/5 text-white text-sm font-semibold hover:bg-white/15 transition-all duration-200 text-center flex items-center justify-center gap-2">
-              <span>Choose Premium</span>
+            <a href="#contact" data-choose-tier="premium" class="w-full py-3 mb-6 rounded-xl border border-white/15 bg-white/5 text-white text-sm font-semibold hover:bg-white/15 hover:border-purple-500/50 transition-all duration-200 text-center flex items-center justify-center gap-2">
+              <span>Choose Premium Package</span>
               <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
             </a>
 
-            <div class="space-y-3.5">
-              <div class="text-xs font-bold tracking-wider uppercase text-slate-400 mb-3">All Professional Plus:</div>
-              <ul class="flex flex-col gap-3 text-sm font-normal text-slate-300">
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                  <span>Unlimited bespoke pages &amp; workflows</span>
+            <div class="space-y-3">
+              <div class="text-xs font-bold tracking-wider uppercase text-purple-300 mb-2">Everything in Professional, plus:</div>
+              <ul class="flex flex-col gap-2.5 text-xs font-normal text-slate-300">
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Premium visual direction &amp; custom design system</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                  <span>Three.js 3D WebGL immersion &amp; custom animations</span>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>More sophisticated layouts and interactions</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                  <span>Custom API integrations, CMS, or backend functions</span>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Advanced animations and polished transitions</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
-                  <span>Dedicated senior architect &amp; same-day turnaround</span>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Agreed custom integrations</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Advanced enquiry forms &amp; multi-step lead capture</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Enhanced performance and asset optimization</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Structured data markup (Schema.org) where appropriate</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Advanced analytics events and conversion tracking</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Technical SEO and indexability review</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Expanded device and accessibility testing</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Additional security configuration where supported</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Four rounds of design revisions</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Dedicated launch checklist &amp; handover documentation</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Priority maintenance under a defined support agreement</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <iconify-icon icon="solar:check-circle-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+                  <span>Agreed source-code and asset handover after final payment</span>
                 </li>
               </ul>
             </div>
+
+            <!-- Distinct Disclaimer Callout -->
+            <div class="mt-4 p-3 rounded-xl bg-purple-500/10 border border-purple-500/30 text-[11px] text-purple-200 leading-relaxed">
+              <div class="flex items-start gap-1.5">
+                <iconify-icon icon="solar:shield-warning-linear" class="text-purple-400 text-sm shrink-0 mt-0.5"></iconify-icon>
+                <span><strong>Custom Quotation Scope:</strong> Complex SaaS platforms, large-scale web applications, and dedicated backend architectures require separate customized quotations.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/10 text-[11px] text-slate-400 text-center">
+            <span>*Domain name chosen by client &amp; billed separately at actuals</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Interactive Website Ownership & Payment Calculator -->
-      <div id="calculator" class="mt-4 liquid-glass-card liquid-glass-sheen rounded-[28px] p-6 sm:p-10 border border-purple-500/30 max-w-5xl mx-auto w-full shadow-2xl relative z-20">
-        <div class="text-center max-w-2xl mx-auto mb-8">
+      <!-- =========================================================================
+           STEP-BY-STEP INSTALLMENT WORKFLOW & MILESTONE ROADMAP
+           ========================================================================= -->
+      <div id="installment-workflow" class="liquid-glass-card liquid-glass-sheen rounded-[32px] p-6 sm:p-10 border border-purple-500/30 max-w-6xl mx-auto w-full shadow-2xl relative z-20">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-purple-300 text-xs font-semibold tracking-wide uppercase mb-3 shadow-sm">
-            <iconify-icon icon="solar:calculator-minimalistic-linear" class="text-base"></iconify-icon>
-            Interactive Ownership Calculator
+            <iconify-icon icon="solar:route-linear" class="text-base text-purple-400"></iconify-icon>
+            Installment Milestone Roadmap
           </div>
-          <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2 font-display">
-            Transparent Installments. <span class="royal-violet-gradient-text">100% Full Ownership.</span>
+          <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-3 font-display">
+            How Work Gets Done, <span class="royal-violet-gradient-text">Step-by-Step with Installments</span>
           </h3>
-          <p class="text-xs sm:text-sm text-[#8b8988] leading-relaxed font-normal">
-            Our monthly payment model is an accessible installment purchase towards complete website ownership — not an indefinite proprietary lock-in. Explore the schedule below.
+          <p class="text-xs sm:text-sm text-[#8b8988] leading-relaxed font-normal max-w-2xl mx-auto">
+            Pay as your project advances. Every monthly installment corresponds directly to verifiable deliverables, live staging previews, and transparent progress towards 100% intellectual property &amp; source code handover.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- 4 Step Cards Visual Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 text-left">
           
-          <!-- Controls Column -->
-          <div class="lg:col-span-7 space-y-6">
-            <div>
-              <label for="calc-package-select" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                Select Package Tier
-              </label>
-              <select id="calc-package-select" class="w-full bg-[#0c0a18] border border-white/20 rounded-2xl px-5 py-3.5 text-sm sm:text-base font-semibold text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all cursor-pointer">
-                <option value="basic">Basic Tier — ₹7,000 Total (₹1,500/mo)</option>
-                <option value="professional" selected>Professional Tier (Recommended) — ₹10,000 Total (₹2,500/mo)</option>
-                <option value="premium">Premium Tier — ₹12,500 Total (₹3,500/mo)</option>
-              </select>
-            </div>
-
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden flex flex-col justify-between group hover:border-purple-500/40 transition-all">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <label for="calc-installment-slider" class="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                  Installment Progress
-                </label>
-                <span id="calc-slider-current-step" class="text-xs font-mono font-bold text-purple-300 bg-purple-500/20 px-2.5 py-1 rounded-md border border-purple-500/40">
-                  Installment 1 of 4
-                </span>
+                <span class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center font-bold text-xs border border-purple-500/30">01</span>
+                <span class="text-[10px] font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full">Month 1 / 1st Pay</span>
               </div>
-              <input type="range" id="calc-installment-slider" min="1" max="4" value="1" step="1" class="w-full accent-[#a020ff] h-2 bg-white/10 rounded-lg cursor-pointer">
-              <div class="flex justify-between text-[11px] text-slate-400 font-mono mt-2">
-                <span>Month 1 (Launch)</span>
-                <span>Final Handover</span>
-              </div>
-            </div>
-
-            <!-- Schedule Breakdown -->
-            <div>
-              <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
-                Scheduled Payments Breakdown
-              </div>
-              <div id="calc-schedule-breakdown" class="space-y-2">
-                <!-- Dynamically rendered by JS -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Summary Readout Column -->
-          <div class="lg:col-span-5 bg-[#0e0b1d]/90 rounded-2xl p-6 sm:p-8 border border-purple-500/30 flex flex-col justify-between h-full shadow-inner">
-            <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Agreed Scope Price</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1 mb-6 font-mono" id="calc-total-val">
-                ₹10,000
-              </div>
-
-              <div class="space-y-3.5 text-xs border-t border-white/10 pt-5">
-                <div class="flex justify-between items-center">
-                  <span class="text-slate-400">Monthly Installment:</span>
-                  <span class="font-bold text-white font-mono text-sm" id="calc-installment-val">₹2,500/mo</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-slate-400">Payment Term:</span>
-                  <span class="font-semibold text-purple-300" id="calc-total-steps">4 Monthly Payments</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-slate-400">Paid So Far:</span>
-                  <span class="font-bold text-[#45b558] font-mono text-sm" id="calc-paid-so-far">₹2,500</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-slate-400">Remaining Balance:</span>
-                  <span class="font-bold text-white font-mono text-sm" id="calc-remaining-balance">₹7,500</span>
-                </div>
-              </div>
-
-              <div class="mt-5 p-3 rounded-xl bg-purple-500/10 border border-purple-500/30 text-[11px] text-purple-200 leading-relaxed" id="calc-final-payment-notice">
-                All 4 payments are equal ₹2,500 installments
-              </div>
-            </div>
-
-            <div class="mt-6 pt-5 border-t border-white/10">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">One-Time Upfront Alternative</span>
-              <p class="text-xs font-semibold text-purple-300 mb-4" id="calc-onetime-alt">
-                ₹10,000 upfront purchase (100% ownership at handover)
+              <h4 class="text-sm font-bold text-white mb-1.5">Kickoff &amp; Blueprint</h4>
+              <p class="text-[11.5px] text-[#8b8988] leading-relaxed font-normal">
+                Discovery session, brand color palette, sitemap architecture &amp; bespoke UX wireframe approvals.
               </p>
-              <a href="#contact" class="btn-royal-violet w-full !py-3 text-center flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold">
-                <span>Start With This Schedule</span>
-                <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
-              </a>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 text-[10.5px] text-emerald-400 font-semibold flex items-center gap-1">
+              <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+              <span>Free Cloud Staging Setup</span>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden flex flex-col justify-between group hover:border-purple-500/40 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center font-bold text-xs border border-purple-500/30">02</span>
+                <span class="text-[10px] font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full">Month 2 / 2nd Pay</span>
+              </div>
+              <h4 class="text-sm font-bold text-white mb-1.5">Engineering &amp; UI Build</h4>
+              <p class="text-[11.5px] text-[#8b8988] leading-relaxed font-normal">
+                Full custom pages coded with responsive mobile layout, contact form &amp; WhatsApp integrations.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 text-[10.5px] text-cyan-300 font-semibold flex items-center gap-1">
+              <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+              <span>1st Revision Round Included</span>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden flex flex-col justify-between group hover:border-purple-500/40 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center font-bold text-xs border border-purple-500/30">03</span>
+                <span class="text-[10px] font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full">Month 3 / 3rd Pay</span>
+              </div>
+              <h4 class="text-sm font-bold text-white mb-1.5">Speed, SEO &amp; QA</h4>
+              <p class="text-[11.5px] text-[#8b8988] leading-relaxed font-normal">
+                Core Web Vitals speed tuning, on-page SEO meta, Google Analytics setup &amp; cross-browser bug fix.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 text-[10.5px] text-indigo-300 font-semibold flex items-center gap-1">
+              <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+              <span>Sub-Second Performance Tested</span>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden flex flex-col justify-between group hover:border-purple-500/40 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center font-bold text-xs border border-purple-500/30">04</span>
+                <span class="text-[10px] font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full">Month 4 / Final Pay</span>
+              </div>
+              <h4 class="text-sm font-bold text-white mb-1.5">Go-Live &amp; IP Handover</h4>
+              <p class="text-[11.5px] text-[#8b8988] leading-relaxed font-normal">
+                Live domain DNS launch, ongoing technical maintenance, and 100% source-code &amp; asset transfer.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 text-[10.5px] text-amber-300 font-semibold flex items-center gap-1">
+              <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+              <span>100% IP &amp; Code Ownership</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Trust Notice -->
-        <div class="mt-8 pt-5 border-t border-white/10 text-center">
-          <p class="text-xs text-[#8b8988] leading-relaxed max-w-2xl mx-auto">
-            <strong class="font-semibold text-white">100% Intellectual Property Ownership:</strong> All custom source code, assets, and design files transfer 100% to your company upon final installment completion. Zero proprietary lock-in.
-          </p>
+        <!-- Interactive Ownership Calculator Controls & Summary -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-[#0a0815]/90 border border-purple-500/30">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Controls Column -->
+            <div class="lg:col-span-7 space-y-6">
+              <div>
+                <label for="calc-package-select" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                  Select Package Tier to Simulate Installments
+                </label>
+                <select id="calc-package-select" class="w-full bg-[#0c0a18] border border-white/20 rounded-2xl px-5 py-3.5 text-sm sm:text-base font-semibold text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all cursor-pointer">
+                  <option value="basic">Basic Tier — ₹7,000 Total (₹1,500/mo × 4 + ₹1,000)</option>
+                  <option value="professional" selected>Professional Tier (Recommended) — ₹10,000 Total (₹2,500/mo × 4)</option>
+                  <option value="premium">Premium Tier — ₹12,500 Total (₹3,500/mo × 3 + ₹2,000)</option>
+                </select>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <label for="calc-installment-slider" class="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    Installment &amp; Milestone Progress
+                  </label>
+                  <span id="calc-slider-current-step" class="text-xs font-mono font-bold text-purple-300 bg-purple-500/20 px-2.5 py-1 rounded-md border border-purple-500/40">
+                    Installment 1 of 4
+                  </span>
+                </div>
+                <input type="range" id="calc-installment-slider" min="1" max="4" value="1" step="1" class="w-full accent-[#a020ff] h-2 bg-white/10 rounded-lg cursor-pointer">
+                <div class="flex justify-between text-[11px] text-slate-400 font-mono mt-2">
+                  <span>Month 1 (Kickoff)</span>
+                  <span>Final Handover (100% IP)</span>
+                </div>
+              </div>
+
+              <!-- Schedule Breakdown -->
+              <div>
+                <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center justify-between">
+                  <span>Installment Deliverables &amp; Milestones Breakdown</span>
+                  <span class="text-[11px] text-emerald-400 font-medium">✓ Free Hosting Active</span>
+                </div>
+                <div id="calc-schedule-breakdown" class="space-y-2">
+                  <!-- Dynamically rendered by JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary Readout Column -->
+            <div class="lg:col-span-5 bg-[#0e0b1d]/90 rounded-2xl p-6 sm:p-8 border border-purple-500/30 flex flex-col justify-between h-full shadow-inner">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Agreed Package Price</span>
+                <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1 mb-6 font-mono" id="calc-total-val">
+                  ₹10,000
+                </div>
+
+                <div class="space-y-3.5 text-xs border-t border-white/10 pt-5">
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Monthly Installment:</span>
+                    <span class="font-bold text-white font-mono text-sm" id="calc-installment-val">₹2,500/mo</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Payment Term:</span>
+                    <span class="font-semibold text-purple-300" id="calc-total-steps">4 Monthly Payments</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Paid So Far:</span>
+                    <span class="font-bold text-[#45b558] font-mono text-sm" id="calc-paid-so-far">₹2,500</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Remaining Balance:</span>
+                    <span class="font-bold text-white font-mono text-sm" id="calc-remaining-balance">₹7,500</span>
+                  </div>
+                </div>
+
+                <div class="mt-5 p-3 rounded-xl bg-purple-500/10 border border-purple-500/30 text-[11px] text-purple-200 leading-relaxed" id="calc-final-payment-notice">
+                  All 4 payments are equal ₹2,500 installments • 100% IP Transfer
+                </div>
+              </div>
+
+              <div class="mt-6 pt-5 border-t border-white/10">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">One-Time Upfront Alternative</span>
+                <p class="text-xs font-semibold text-purple-300 mb-4" id="calc-onetime-alt">
+                  ₹10,000 upfront purchase (100% ownership at launch)
+                </p>
+                <a href="#contact" class="btn-royal-violet w-full !py-3 text-center flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold">
+                  <span>Book This Schedule</span>
+                  <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Trust & Transparency Notice -->
+          <div class="mt-8 pt-5 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-[#8b8988]">
+            <div class="flex items-start gap-2">
+              <iconify-icon icon="solar:lock-keyhole-linear" class="text-purple-400 text-base shrink-0 mt-0.5"></iconify-icon>
+              <span><strong class="text-white">100% IP &amp; Code Ownership:</strong> All custom code, assets, and design files transfer 100% to your company upon final installment. Zero proprietary lock-in.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <iconify-icon icon="solar:server-square-linear" class="text-emerald-400 text-base shrink-0 mt-0.5"></iconify-icon>
+              <span><strong class="text-white">Hosting &amp; Domain Policy:</strong> High-speed cloud hosting and SSL certificates are 100% free. Domain registration is chosen by you &amp; billed directly at actual registrar cost.</span>
+            </div>
+          </div>
         </div>
+
       </div>
 
     </main>
