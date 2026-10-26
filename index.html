@@ -72,16 +72,16 @@
 
 
   <!-- =========================================================================
-       HERO STAGE: "Royal Violet" Zapline Trading CTA Hero
-       Pure black starfield, glowing violet planet rim video, rising dashboard
+       HERO STAGE: "Royal Violet" Eaklavya.dev Agency Hero
+       Pure black starfield, glowing violet planet rim video, high-impact CTA
        ========================================================================= -->
     <header id="hero-stage-wrapper">
       <script>
         (function() {
-          var vw = window.innerWidth, vh = window.innerHeight;
-          if (vw >= 900 && (vw >= 1024 || vh <= vw)) {
-            var s = Math.min(vw / 1672, vh / 720);
-            var h = Math.max(Math.round(720 * s), Math.min(vh, 720));
+          var vw = window.innerWidth;
+          if (vw >= 900) {
+            var s = vw / 1672;
+            var h = Math.round(490 * s);
             document.write('<style>#stage{transform: translateX(-50%) scale(' + s + ') !important;} #hero-stage-wrapper{height:' + h + 'px !important;}</style>');
           }
         })();
@@ -97,30 +97,30 @@
       <!-- Fallback Canvas Rim (Painted from polar table before video loads & on mobile) -->
       <canvas id="rim-fallback"></canvas>
 
-      <!-- Nav: Violet lightning-bolt logo, centered menu, violet Get Started pill -->
+      <!-- Nav: Brand Logo, Centered Agency Menu, Violet Start Project pill -->
       <header id="site-nav">
-        <!-- Left: Lightning Logo + Brand -->
+        <!-- Left: Monogram/Icon + Brand -->
         <a href="#" class="brand-logo-wrap">
           <div class="brand-icon-box">
             <svg viewBox="0 0 24 24">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
           </div>
-          <span class="brand-name">Zapline</span>
+          <span class="brand-name">Eaklavya.dev</span>
         </a>
 
-        <!-- Center Menu: Home · Features · Zapline Advantage · Pricing · FAQ -->
+        <!-- Center Menu: Home · Services · Advantage · Pricing · FAQ -->
         <nav class="nav-center-menu">
           <a href="#home" class="nav-link active-pill">Home</a>
-          <a href="#services" class="nav-link">Features</a>
-          <a href="#advantage" class="nav-link">Zapline Advantage</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#advantage" class="nav-link">Advantage</a>
           <a href="#pricing" class="nav-link">Pricing</a>
           <a href="#faq" class="nav-link">FAQ</a>
         </nav>
 
-        <!-- Right: Violet "Get Started" Pill -->
+        <!-- Right: Violet "Start Project" Pill -->
         <a href="#contact" class="btn-nav-started">
-          <span>Get Started</span>
+          <span>Start Project</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="m12 5 7 7-7 7"></path>
@@ -133,30 +133,30 @@
         <h1 class="hero-headline">
           <span class="headline-line-wrapper">
             <span class="headline-line line-1">
-              <span class="violet-gradient">Zapline</span> Trade Smarter,
+              <span class="violet-gradient">Eaklavya.dev</span> Build Smarter,
             </span>
           </span>
           <span class="headline-line-wrapper">
             <span class="headline-line line-2">
-              Faster, Safer.
+              Faster, Exceptional.
             </span>
           </span>
         </h1>
 
         <p class="hero-lede" id="hero-lede">
-          The first fully integrated on-chain trading experience. No dashboards, no delays — Zapline empowers you to trade directly from your favorite DeFi apps and terminals.
+          We craft high-performance websites, bespoke web applications, and digital flagships for visionary founders and modern brands. Sub-second speed, conversion-focused UI/UX, and zero bloat.
         </p>
 
         <div class="hero-buttons" id="hero-buttons">
           <a href="#contact" class="btn-royal-violet">
-            <span>Get Started</span>
+            <span>Start a Project</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
           </a>
           <a href="#services" class="btn-dark-pill">
-            <span>Learn More</span>
+            <span>Explore Services</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
@@ -165,6 +165,9 @@
         </div>
       </div>
 
+      <!-- Bottom feather into section below -->
+      <div class="hero-bottom-fade"></div>
+
     </div>
   </header>
 
@@ -172,7 +175,7 @@
   <!-- =========================================================================
        4-PILLAR HIGHLIGHTS STRIP (Pure Code, Dark Glass, Zero Bloat)
        ========================================================================= -->
-  <section class="py-12 bg-[#000000] relative z-20 border-b border-white/10">
+  <section class="pt-8 pb-12 bg-[#000000] relative z-20 border-b border-white/10">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
         
@@ -457,7 +460,7 @@
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-purple-400 text-xs font-semibold tracking-wide uppercase mb-6 w-fit">
         <iconify-icon icon="solar:star-fall-linear" class="text-base"></iconify-icon>
-        The Zapline Advantage
+        The Eaklavya Advantage
       </div>
 
       <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -1136,7 +1139,7 @@
       </div>
 
       <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8b8988]">
-        <p>© 2026 Eaklavya.dev &amp; Zapline. All rights reserved.</p>
+        <p>© 2026 Eaklavya.dev. All rights reserved.</p>
         <div class="flex items-center gap-4">
           <a href="#site-nav" class="hover:text-white transition-colors">Back to Top ↑</a>
         </div>

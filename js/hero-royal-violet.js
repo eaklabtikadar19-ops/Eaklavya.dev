@@ -49,12 +49,9 @@
         return;
       }
 
-      // Frame dimensions (720px matches the glowing planet rim video height)
+      // Design frame: 1672px design width, 490px design height (compact, no empty void)
       const dw = 1672;
-      const dh = 720;
-
-      // Scaling factor s = min(vw/1672, vh/720)
-      const s = Math.min(vw / dw, vh / dh);
+      const s = vw / dw;
 
       // Center horizontally and scale
       stage.style.position = 'absolute';
@@ -64,8 +61,8 @@
       stage.style.transform = `translateX(-50%) scale(${s})`;
       stage.style.transformOrigin = 'top center';
 
-      const totalDesignHeight = 720;
-      const renderedHeight = Math.max(Math.round(totalDesignHeight * s), Math.min(vh, 720));
+      const totalDesignHeight = 490;
+      const renderedHeight = Math.round(totalDesignHeight * s);
       heroWrapper.style.height = `${renderedHeight}px`;
       stage.style.height = `${totalDesignHeight}px`;
     }
