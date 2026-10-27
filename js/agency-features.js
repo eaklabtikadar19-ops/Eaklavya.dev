@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
    1. Contact & Project Onboarding Form
    ========================================================================== */
 function initContactForm() {
-  const form = document.getElementById('project-onboarding-form');
+  const form = document.getElementById('project-inquiry-form') || document.getElementById('project-onboarding-form');
   const successState = document.getElementById('form-success-state');
   const errorAlert = document.getElementById('form-error-alert');
-  const packageSelect = document.getElementById('contact-package-select');
+  const packageSelect = document.getElementById('form-tier') || document.getElementById('contact-package-select');
 
   if (!form) return;
 
@@ -39,17 +39,18 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = form.querySelector('#client-name')?.value.trim();
-    const email = form.querySelector('#client-email')?.value.trim();
-    const phone = form.querySelector('#client-phone')?.value.trim();
-    const brand = form.querySelector('#client-brand')?.value.trim();
-    const packageChosen = form.querySelector('#contact-package-select')?.value;
-    const details = form.querySelector('#client-details')?.value.trim();
+    const name = (form.querySelector('#form-name') || form.querySelector('#client-name'))?.value.trim() || '';
+    const email = (form.querySelector('#form-email') || form.querySelector('#client-email'))?.value.trim() || '';
+    const phone = (form.querySelector('#form-phone') || form.querySelector('#client-phone'))?.value.trim() || '';
+    const tier = (form.querySelector('#form-tier') || form.querySelector('#contact-package-select'))?.value || 'Standard';
+    const message = (form.querySelector('#form-message') || form.querySelector('#client-details'))?.value.trim() || '';
 
     if (!name || !email) {
       if (errorAlert) {
         errorAlert.textContent = 'Please provide your name and a valid email address.';
         errorAlert.classList.remove('hidden');
+      } else {
+        alert('Please provide your name and email address.');
       }
       return;
     }
@@ -65,32 +66,37 @@ function initContactForm() {
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
         </svg>
-        Sending Details...
+        Connecting via WhatsApp...
       `;
     }
 
-    // Simulate reliable submission
+    // Prepare direct WhatsApp message with user details
+    const waText = encodeURIComponent(
+      `Hi Eaklavya! 👋\n\nI just submitted an inquiry on Eaklavya.dev:\n• Name: ${name}\n• Email: ${email}\n• Phone: ${phone || 'N/A'}\n• Selected Package: ${tier}\n• Project Details: ${message || 'Discussing scope & recent work'}\n\nLooking forward to seeing recent work and getting started!`
+    );
+
     setTimeout(() => {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
+        submitBtn.innerHTML = `
+          <iconify-icon icon="solar:check-circle-bold" class="text-emerald-400 text-lg mr-1"></iconify-icon>
+          <span>Opening WhatsApp...</span>
+        `;
       }
 
-      form.classList.add('hidden');
+      // Open WhatsApp chat directly in a new tab
+      window.open(`https://wa.me/919933733027?text=${waText}`, '_blank');
+
       if (successState) {
+        form.classList.add('hidden');
         successState.classList.remove('hidden');
         successState.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        setTimeout(() => {
+          if (submitBtn) submitBtn.innerHTML = originalBtnText;
+        }, 3000);
       }
-
-      // Also prepare direct WhatsApp link for instant messaging
-      const whatsappBtn = document.getElementById('whatsapp-direct-link');
-      if (whatsappBtn) {
-        const msg = encodeURIComponent(
-          `Hi Eaklavya! I just submitted an inquiry for my business ${brand || name}. I'm interested in the ${packageChosen} package.`
-        );
-        whatsappBtn.href = `https://wa.me/919933733027?text=${msg}`;
-      }
-    }, 900);
+    }, 600);
   });
 }
 
@@ -311,6 +317,12 @@ function initCaseStudyModals() {
         span.textContent = tech;
         stackEl.appendChild(span);
       });
+    }
+
+    const waBtn = document.getElementById('cs-modal-wa-btn');
+    if (waBtn) {
+      const msg = encodeURIComponent(`Hi Eaklavya! I was reading the "${cs.title}" case study on your site and would like to see the live demo and similar recent work.`);
+      waBtn.href = `https://wa.me/919933733027?text=${msg}`;
     }
 
     modal.classList.remove('hidden');

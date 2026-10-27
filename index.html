@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eaklavya.dev — Build Smarter, Faster, Exceptional | Web & App Flagship Studio</title>
-  <meta name="description" content="Eaklavya.dev is an elite on-chain & digital flagship studio crafting high-performance websites, next-gen web applications, and immersive digital experiences.">
-  <link rel="icon" type="image/webp" href="eaklavya.dev%20logo.webp">
+  <link rel="icon" type="image/jpeg" href="dp.jpeg">
+  <link rel="shortcut icon" type="image/jpeg" href="dp.jpeg">
+  <link rel="apple-touch-icon" href="dp.jpeg">
+  <meta property="og:image" content="dp.jpeg">
+  <meta name="twitter:image" content="dp.jpeg">
   
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Eaklavya.dev",
-    "image": "https://eaklavya.dev/eaklavya.dev%20logo.webp",
+    "image": "https://eaklavya.dev/dp.jpeg",
     "description": "An elite web engineering & digital flagship studio crafting ultra-fast websites, apps, and digital platforms.",
     "url": "https://eaklavya.dev"
   }
@@ -99,21 +102,19 @@
 
       <!-- Nav: Brand Logo, Centered Agency Menu, Violet Start Project pill -->
       <header id="site-nav">
-        <!-- Left: Monogram/Icon + Brand -->
-        <a href="#" class="brand-logo-wrap">
-          <div class="brand-icon-box">
-            <svg viewBox="0 0 24 24">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-            </svg>
-          </div>
+        <!-- Left: Brand Logo + Name -->
+        <a href="#" class="brand-logo-wrap group" aria-label="Eaklavya.dev Home">
+          <img src="dp.jpeg" alt="Eaklavya.dev" class="brand-logo-img" />
           <span class="brand-name">Eaklavya.dev</span>
         </a>
 
-        <!-- Center Menu: Home · Services · Advantage · Pricing · FAQ -->
+        <!-- Center Menu: Home · Services · Advantage · Work · Reviews · Pricing · FAQ -->
         <nav class="nav-center-menu">
           <a href="#home" class="nav-link active-pill">Home</a>
           <a href="#services" class="nav-link">Services</a>
           <a href="#advantage" class="nav-link">Advantage</a>
+          <a href="#work" class="nav-link">Recent Work</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
           <a href="#pricing" class="nav-link">Pricing</a>
           <a href="#faq" class="nav-link">FAQ</a>
         </nav>
@@ -494,24 +495,826 @@
           </div>
         </div>
 
-        <!-- Visual Metric Progress -->
-        <div class="relative w-full max-w-[420px] aspect-square mx-auto flex items-center justify-center">
-          <div class="absolute inset-8 bg-[#9312ff] opacity-20 blur-[90px] rounded-full pointer-events-none"></div>
-          <div class="relative w-full h-full rounded-full liquid-glass-card border border-white/15 flex items-center justify-center p-8">
-            <div class="text-center">
-              <div class="text-5xl sm:text-6xl font-extrabold text-white tracking-tight mb-2 font-display">
-                <span class="royal-violet-gradient-text">99.8%</span>
+        <!-- Precision Performance Meter Gauge (0% - 99.8% Animated SLA) -->
+        <div id="metric-circle-container" class="relative w-full max-w-[430px] aspect-square mx-auto flex items-center justify-center group cursor-pointer" title="Click to replay meter sweep">
+          <!-- Ambient Glow Atmosphere -->
+          <div class="absolute inset-2 bg-gradient-to-tr from-[#9312ff]/45 via-[#a020ff]/30 to-[#38bdf8]/25 blur-[95px] rounded-full pointer-events-none transition-all duration-700 group-hover:blur-[120px] group-hover:opacity-100 opacity-80"></div>
+          
+          <!-- Outer orbital precision dial rim -->
+          <div class="absolute inset-0 rounded-full border border-purple-500/25 animate-spin-slow pointer-events-none"></div>
+
+          <!-- Meter Card Dial Container -->
+          <div class="meter-card relative w-full h-full rounded-full flex items-center justify-center p-7 overflow-hidden">
+            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 360 360">
+              <defs>
+                <linearGradient id="metric-violet-cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#9312ff" />
+                  <stop offset="45%" stop-color="#c084fc" />
+                  <stop offset="85%" stop-color="#38bdf8" />
+                  <stop offset="100%" stop-color="#22d3ee" />
+                </linearGradient>
+                <linearGradient id="metric-needle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(147, 18, 255, 0)" />
+                  <stop offset="60%" stop-color="#c084fc" />
+                  <stop offset="100%" stop-color="#ffffff" />
+                </linearGradient>
+                <filter id="metric-dot-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#38bdf8" flood-opacity="0.9" />
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#9312ff" flood-opacity="0.7" />
+                </filter>
+              </defs>
+
+              <!-- Radial Graduation Scale Ticks (36 ticks every 10 deg) -->
+              <g stroke="rgba(255, 255, 255, 0.18)" stroke-width="1.5">
+                <line x1="180" y1="12" x2="180" y2="20" stroke="#c084fc" stroke-width="2.5" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(10 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(20 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(30 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(40 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="22" stroke="#38bdf8" stroke-width="2" transform="rotate(50 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(60 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(70 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(80 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="22" stroke="#c084fc" stroke-width="2" transform="rotate(90 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(100 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(110 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(120 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(130 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="22" stroke="#38bdf8" stroke-width="2" transform="rotate(140 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(150 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(160 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(170 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="22" stroke="#c084fc" stroke-width="2" transform="rotate(180 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(190 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(200 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(210 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(220 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="22" stroke="#38bdf8" stroke-width="2" transform="rotate(230 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(240 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(250 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(260 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="22" stroke="#c084fc" stroke-width="2" transform="rotate(270 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(280 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(290 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(300 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(310 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="22" stroke="#38bdf8" stroke-width="2" transform="rotate(320 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(330 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(340 180 180)" />
+                <line x1="180" y1="12" x2="180" y2="18" transform="rotate(350 180 180)" />
+              </g>
+
+              <!-- Dial Legend Markers -->
+              <text x="180" y="36" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="rgba(255,255,255,0.4)" font-weight="700">100%</text>
+              <text x="180" y="334" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="rgba(255,255,255,0.4)" font-weight="700">50%</text>
+              <text x="36" y="184" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="rgba(255,255,255,0.4)" font-weight="700">75%</text>
+              <text x="324" y="184" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="rgba(255,255,255,0.4)" font-weight="700">25%</text>
+
+              <!-- Rotating Meter Geometry Group -->
+              <g transform="rotate(-90 180 180)">
+                <!-- Dark Groove Track Circle -->
+                <circle cx="180" cy="180" r="150" fill="none" stroke="rgba(255, 255, 255, 0.07)" stroke-width="8" />
+
+                <!-- Sweeping Meter Active Arc -->
+                <circle
+                  id="metric-progress-ring"
+                  cx="180"
+                  cy="180"
+                  r="150"
+                  fill="none"
+                  stroke="url(#metric-violet-cyan-grad)"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  stroke-dasharray="942.48"
+                  stroke-dashoffset="1.88"
+                />
+
+                <!-- Dynamic Radial Needle Indicator Line -->
+                <line
+                  id="metric-needle-line"
+                  x1="180"
+                  y1="180"
+                  x2="322"
+                  y2="180"
+                  stroke="url(#metric-needle-grad)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  filter="url(#metric-dot-glow)"
+                  opacity="0.95"
+                />
+
+                <!-- Glowing Needle Head Indicator Dot -->
+                <circle
+                  id="metric-progress-dot"
+                  cx="330"
+                  cy="180"
+                  r="7.5"
+                  fill="#ffffff"
+                  filter="url(#metric-dot-glow)"
+                />
+              </g>
+            </svg>
+
+            <!-- Center Metric Telemetry Display -->
+            <div class="text-center relative z-10 select-none px-4">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-[11px] font-mono text-purple-300 mb-2 uppercase tracking-wider shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 beacon-online"></span>
+                <span>Verified SLA Gauge</span>
               </div>
-              <p class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-1">
+
+              <!-- Main Reading: Animated from 0% to 99.8% on Section Entry -->
+              <div class="text-5xl sm:text-6xl font-extrabold text-white tracking-tight my-1 font-display flex items-baseline justify-center">
+                <span id="metric-percentage" class="royal-violet-gradient-text" data-target="99.8">99.8%</span>
+              </div>
+
+              <p class="text-xs uppercase tracking-widest text-slate-200 font-semibold mb-2">
                 Client Satisfaction SLA
               </p>
-              <p class="text-[11px] text-slate-500 font-mono">
-                Over 1,280+ Sprints Shipped
-              </p>
+
+              <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-400">
+                <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+                <span>Zero Bloat &bull; 100/100 Core Vitals</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       RECENT WORK & PORTFOLIO SHOWCASE (#work)
+       ========================================================================= -->
+  <section id="work" class="py-24 lg:py-32 bg-[#020108] border-b border-white/10 relative liquid-ambient-wrap">
+    <div class="liquid-orb liquid-orb-violet w-96 h-96 -top-20 -right-20"></div>
+    <div class="liquid-orb liquid-orb-cyan w-96 h-96 -bottom-20 -left-20 liquid-orb-reverse"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
+          <iconify-icon icon="solar:laptop-minimalistic-linear" class="text-base"></iconify-icon>
+          Shipped Flagships &amp; Proven Builds
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-white mb-6 font-display">
+          Recent Work Built for <span class="royal-violet-gradient-text font-serif italic">Velocity &amp; Growth</span>
+        </h2>
+        <p class="text-base sm:text-lg text-[#8b8988] leading-relaxed">
+          From 3D luxury storefronts to real-time SaaS portals. Every build is production-engineered for sub-second load times and maximum business conversion.
+        </p>
+      </div>
+
+      <!-- HIGHLIGHT HERO BANNER: "Want to see recent work? Enquire now on WhatsApp" -->
+      <div class="liquid-glass-card rounded-[28px] max-w-5xl mx-auto p-6 sm:p-10 border border-emerald-500/30 bg-gradient-to-r from-emerald-950/20 via-[#130f28]/60 to-[#0e0a22]/80 relative overflow-hidden shadow-[0_0_40px_rgba(37,211,102,0.15)]">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div class="flex items-start sm:items-center gap-5">
+            <div class="w-16 h-16 rounded-2xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0 text-3xl shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+              <iconify-icon icon="simple-icons:whatsapp"></iconify-icon>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 beacon-online"></span>
+                <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 font-mono">Lead Architect Online Now</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2">
+                Want to See Confidential Recent Work &amp; Live Demos?
+              </h3>
+              <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
+                Many of our top client flagships are protected under NDA agreements. Connect directly on WhatsApp to receive unlisted live URLs, Figma design systems, Lighthouse audits, and a free 15-minute scope estimate.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 w-full sm:w-auto">
+            <a href="https://wa.me/919933733027?text=Hi%20Eaklavya!%20I'd%20like%20to%20see%20your%20recent%20work%20and%20live%20client%20demos." target="_blank" rel="noopener" class="liquid-glass-whatsapp px-7 py-4 rounded-full text-white font-bold text-sm inline-flex items-center justify-center gap-2.5 shadow-xl hover:scale-105 transition-all text-center">
+              <iconify-icon icon="simple-icons:whatsapp" class="text-lg"></iconify-icon>
+              <span>Enquire on WhatsApp Now</span>
+            </a>
+            <span class="text-[11px] text-slate-400 text-center font-mono flex items-center justify-center gap-1">
+              <iconify-icon icon="solar:bolt-linear" class="text-amber-400"></iconify-icon>
+              Instant Reply &bull; Zero Pressure
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VERIFIED REVIEWS SECTION (#reviews)
+       ========================================================================= -->
+  <section id="reviews" class="py-24 lg:py-32 bg-[#000000] border-b border-white/10 relative liquid-ambient-wrap">
+    <div class="liquid-orb liquid-orb-violet w-96 h-96 -top-20 -left-20"></div>
+    <div class="liquid-orb liquid-orb-rose w-96 h-96 -bottom-20 -right-20 liquid-orb-reverse"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-amber-400 text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
+          <iconify-icon icon="solar:star-fall-bold" class="text-base text-amber-400"></iconify-icon>
+          5.0 Star Verified Reviews
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-white mb-6 font-display">
+          Loved by Founders. <span class="royal-violet-gradient-text font-serif italic">Verified by Results.</span>
+        </h2>
+        <p class="text-base sm:text-lg text-[#8b8988] leading-relaxed">
+          Read unedited feedback from high-growth startups, product teams, and boutique brands who trusted us with their core digital presence.
+        </p>
+      </div>
+
+      <!-- Aggregate Rating Metric Strip -->
+      <div class="liquid-glass-card rounded-2xl p-6 mb-16 border border-white/10 max-w-5xl mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+          <div class="p-2">
+            <div class="flex items-center justify-center gap-1 text-amber-400 text-lg mb-1">
+              <iconify-icon icon="solar:star-bold"></iconify-icon>
+              <iconify-icon icon="solar:star-bold"></iconify-icon>
+              <iconify-icon icon="solar:star-bold"></iconify-icon>
+              <iconify-icon icon="solar:star-bold"></iconify-icon>
+              <iconify-icon icon="solar:star-bold"></iconify-icon>
+            </div>
+            <div class="text-2xl font-extrabold text-white font-display">4.98 / 5.0</div>
+            <p class="text-[11px] text-slate-400 font-mono mt-0.5">Average Client Rating</p>
+          </div>
+          <div class="p-2 pt-4 lg:pt-2">
+            <div class="text-2xl font-extrabold text-purple-400 font-display">99.8%</div>
+            <p class="text-xs font-semibold text-white mt-1">Satisfaction SLA</p>
+            <p class="text-[11px] text-slate-400 font-mono">Guaranteed Milestones</p>
+          </div>
+          <div class="p-2 pt-4 lg:pt-2">
+            <div class="text-2xl font-extrabold text-emerald-400 font-display">100%</div>
+            <p class="text-xs font-semibold text-white mt-1">On-Time Delivery</p>
+            <p class="text-[11px] text-slate-400 font-mono">14-Day Sprint Cadence</p>
+          </div>
+          <div class="p-2 pt-4 lg:pt-2">
+            <div class="text-2xl font-extrabold text-cyan-400 font-display">0%</div>
+            <p class="text-xs font-semibold text-white mt-1">Vendor Lock-In</p>
+            <p class="text-[11px] text-slate-400 font-mono">100% Code &amp; IP Handover</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D BEND HORIZONTAL INFINITE CAROUSEL -->
+      <div class="reviews-3d-stage relative w-full my-8 py-4 overflow-hidden select-none">
+        <!-- Left 3D Bend Curvature Vignette -->
+        <div class="reviews-3d-left-bend"></div>
+        <!-- Right 3D Bend Curvature Vignette -->
+        <div class="reviews-3d-right-bend"></div>
+
+        <!-- Infinite Scrolling Track (Duplicated Sets for Seamless Continuous Stream) -->
+        <div class="reviews-carousel-track">
+          
+          <!-- ==================== TRACK SET A (8 Indian Clients) ==================== -->
+          
+          <!-- Card 1: Rohan Sharma -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;From our first call to launch, the engineering quality was beyond expectations. Zero bloat, instant sub-second speed, and 100/100 Core Web Vitals. Eaklavya is hands down the best development studio we have worked with.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  RS
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Rohan Sharma</h4>
+                  <p class="text-[11px] text-purple-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">100/100 Vitals</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Aarav Patel -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Most agencies waste weeks in back-and-forth emails. Eaklavya delivered our complete custom web application in just 12 days. Clean semantic code, direct senior communication, and flawless execution.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  AP
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Aarav Patel</h4>
+                  <p class="text-[11px] text-emerald-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded">Shipped 12 Days</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Priya Deshmukh -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;The direct WhatsApp inquiry integration and smooth mobile UX transformed our incoming leads immediately. Daily sprint progress updates kept everything 100% transparent and stress-free.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-orange-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  PD
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Priya Deshmukh</h4>
+                  <p class="text-[11px] text-amber-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">+220% Inquiries</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Vikram Malhotra -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Sub-second load times and fluid micro-animations across all devices. Handed over 100% of the repository and code ownership without any hassle or vendor lock-in. Exceptional craftsmanship.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-600 to-blue-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  VM
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Vikram Malhotra</h4>
+                  <p class="text-[11px] text-cyan-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded">100% IP Handover</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Ananya Iyer -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;The dark liquid-glass UI and typography match top-tier international standards. Our previous website felt sluggish, but the new build loads instantly and looks incredibly polished.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-fuchsia-600 to-purple-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  AI
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Ananya Iyer</h4>
+                  <p class="text-[11px] text-fuchsia-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-fuchsia-300 bg-fuchsia-500/10 border border-fuchsia-500/20 px-2 py-0.5 rounded">Apple-grade UI</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Kabir Mehta -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Blazing-fast page speed, gorgeous interactive visual aesthetics, and immediate turnaround on every detail. By far the highest ROI digital investment we have made.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-600 to-red-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  KM
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Kabir Mehta</h4>
+                  <p class="text-[11px] text-rose-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-rose-300 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded">Sub-300ms Speed</span>
+            </div>
+          </div>
+
+          <!-- Card 7: Sneha Kulkarni -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Direct access to the lead developer was a breath of fresh air. Every question was answered on WhatsApp within minutes, and the website was delivered ahead of our launch schedule.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-violet-600 to-indigo-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  SK
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Sneha Kulkarni</h4>
+                  <p class="text-[11px] text-violet-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded">Instant WhatsApp</span>
+            </div>
+          </div>
+
+          <!-- Card 8: Aditya Verma -->
+          <div class="review-3d-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Production-ready, battle-tested code with seamless responsiveness. The attention to detail and performance optimization are truly world-class.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-teal-600 to-emerald-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  AV
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Aditya Verma</h4>
+                  <p class="text-[11px] text-teal-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-teal-300 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded">Zero Bloat</span>
+            </div>
+          </div>
+
+
+          <!-- ==================== TRACK SET B (Seamless Duplication for Infinite Loop) ==================== -->
+          
+          <!-- Card 1 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;From our first call to launch, the engineering quality was beyond expectations. Zero bloat, instant sub-second speed, and 100/100 Core Web Vitals. Eaklavya is hands down the best development studio we have worked with.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  RS
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Rohan Sharma</h4>
+                  <p class="text-[11px] text-purple-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">100/100 Vitals</span>
+            </div>
+          </div>
+
+          <!-- Card 2 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Most agencies waste weeks in back-and-forth emails. Eaklavya delivered our complete custom web application in just 12 days. Clean semantic code, direct senior communication, and flawless execution.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  AP
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Aarav Patel</h4>
+                  <p class="text-[11px] text-emerald-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded">Shipped 12 Days</span>
+            </div>
+          </div>
+
+          <!-- Card 3 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;The direct WhatsApp inquiry integration and smooth mobile UX transformed our incoming leads immediately. Daily sprint progress updates kept everything 100% transparent and stress-free.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-orange-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  PD
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Priya Deshmukh</h4>
+                  <p class="text-[11px] text-amber-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">+220% Inquiries</span>
+            </div>
+          </div>
+
+          <!-- Card 4 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Sub-second load times and fluid micro-animations across all devices. Handed over 100% of the repository and code ownership without any hassle or vendor lock-in. Exceptional craftsmanship.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-600 to-blue-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  VM
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Vikram Malhotra</h4>
+                  <p class="text-[11px] text-cyan-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded">100% IP Handover</span>
+            </div>
+          </div>
+
+          <!-- Card 5 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;The dark liquid-glass UI and typography match top-tier international standards. Our previous website felt sluggish, but the new build loads instantly and looks incredibly polished.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-fuchsia-600 to-purple-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  AI
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Ananya Iyer</h4>
+                  <p class="text-[11px] text-fuchsia-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-fuchsia-300 bg-fuchsia-500/10 border border-fuchsia-500/20 px-2 py-0.5 rounded">Apple-grade UI</span>
+            </div>
+          </div>
+
+          <!-- Card 6 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Blazing-fast page speed, gorgeous interactive visual aesthetics, and immediate turnaround on every detail. By far the highest ROI digital investment we have made.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-600 to-red-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  KM
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Kabir Mehta</h4>
+                  <p class="text-[11px] text-rose-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-rose-300 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded">Sub-300ms Speed</span>
+            </div>
+          </div>
+
+          <!-- Card 7 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Direct access to the lead developer was a breath of fresh air. Every question was answered on WhatsApp within minutes, and the website was delivered ahead of our launch schedule.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-violet-600 to-indigo-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  SK
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Sneha Kulkarni</h4>
+                  <p class="text-[11px] text-violet-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded">Instant WhatsApp</span>
+            </div>
+          </div>
+
+          <!-- Card 8 Duplicate -->
+          <div class="review-3d-card flex flex-col justify-between" aria-hidden="true">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                  <iconify-icon icon="solar:star-bold"></iconify-icon>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <iconify-icon icon="solar:check-circle-bold"></iconify-icon> Verified Client
+                </span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                &ldquo;Production-ready, battle-tested code with seamless responsiveness. The attention to detail and performance optimization are truly world-class.&rdquo;
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-teal-600 to-emerald-600 text-white font-bold text-sm flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                  AV
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Aditya Verma</h4>
+                  <p class="text-[11px] text-teal-300 font-mono">Verified Client</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-teal-300 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded">Zero Bloat</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Trust Footer Callout -->
+      <div class="mt-14 text-center">
+        <p class="text-xs text-[#8b8988] mb-3">
+          Want direct founder references or want to speak with clients in your industry?
+        </p>
+        <a href="https://wa.me/919933733027?text=Hi%20Eaklavya!%20I'd%20like%20to%20request%20client%20references%20and%20see%20recent%20work." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+          <iconify-icon icon="simple-icons:whatsapp" class="text-base text-[#25D366]"></iconify-icon>
+          <span>Request Client References on WhatsApp</span>
+          <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -1427,11 +2230,12 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 border-t border-white/10 pt-16 mb-16 text-xs text-[#8b8988]">
         
         <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-2.5">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-[#a020ff] to-[#7a1cf8] flex items-center justify-center shadow-[0_0_12px_rgba(160,32,255,0.6)]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-white"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <div class="flex items-center gap-3">
+            <img src="dp.jpeg" alt="Eaklavya.dev Logo" class="w-10 h-10 rounded-xl object-cover border border-purple-500/40 shadow-[0_0_18px_rgba(160,32,255,0.45)]" />
+            <div>
+              <span class="text-xl font-bold tracking-tight text-white font-display block leading-none">Eaklavya.dev</span>
+              <span class="text-[10px] text-purple-400 font-mono uppercase tracking-widest mt-1 block">Web &amp; App Flagship Studio</span>
             </div>
-            <img src="eaklavya.dev%20logo.webp" alt="Eaklavya.dev" class="h-6 w-auto object-contain brightness-110" />
           </div>
           <p class="text-slate-400 max-w-sm leading-relaxed">
             An elite on-chain &amp; digital flagship studio crafting ultra-fast web experiences, SaaS apps, and category-defining interactive systems.
@@ -1544,14 +2348,36 @@
           </div>
         </div>
       </div>
-      <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
-        <span>Transparent Portfolio Showcase</span>
+      <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+        <a id="cs-modal-wa-btn" href="https://wa.me/919933733027?text=Hi%20Eaklavya!%20I'm%20viewing%20your%20case%20studies%20and%20would%20like%20to%20see%20recent%20work." target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 font-semibold inline-flex items-center gap-1.5 transition-colors">
+          <iconify-icon icon="simple-icons:whatsapp" class="text-base text-[#25D366]"></iconify-icon>
+          <span>Ask About This on WhatsApp</span>
+        </a>
         <a href="#contact" onclick="document.getElementById('case-study-modal').classList.add('hidden'); document.body.classList.remove('overflow-hidden');" class="btn-royal-violet !py-2 !px-4 text-xs font-semibold">
           Build Similar Project
         </a>
       </div>
     </div>
   </div>
+
+  <!-- Floating WhatsApp Quick-Access Pill (Fast, Simple, Convenient) -->
+  <a
+    id="floating-whatsapp-action"
+    href="https://wa.me/919933733027?text=Hi%20Eaklavya!%20I'd%20like%20to%20see%20your%20recent%20work%20and%20enquire%20about%20a%20project."
+    target="_blank"
+    rel="noopener"
+    aria-label="Enquire on WhatsApp to see recent work"
+    class="floating-whatsapp-pill group"
+  >
+    <div class="relative flex items-center justify-center">
+      <iconify-icon icon="simple-icons:whatsapp" class="text-xl text-[#25D366] group-hover:scale-110 transition-transform"></iconify-icon>
+      <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 beacon-online"></span>
+    </div>
+    <div class="flex flex-col text-left leading-tight">
+      <span class="text-[10px] text-emerald-400 font-mono uppercase tracking-wider">Recent Work &bull; Online</span>
+      <span class="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">Enquire on WhatsApp</span>
+    </div>
+  </a>
 
 
 
@@ -1567,6 +2393,7 @@
   <script src="js/globe.js"></script>
   <script src="js/agency-features.js"></script>
   <script src="js/entrance-animations.js"></script>
+  <script src="js/reviews-3d-carousel.js"></script>
 
   <script>
     if (window.lucide) {
